@@ -1,0 +1,57 @@
+#image:
+stages:
+  - mvn-package
+  - mvn-deploy
+
+maven-test-branches:
+  stage: mvn-package
+  script:
+    - git_merge master
+    - mvn package source: jar-no-fork javadoc:jar
+  only:
+    - branches
+  except:
+    - master
+    - tags
+    - /^release-.*$/
+    - /^hotfix-.*$/
+
+maven-test-build:
+  stage: maven-package
+  script:
+    - update_pom_version
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package \
+      sonar:sonar -Dsonar.host.url=$SONAR_URL -Dsonar.login=$SONAR_LOGIN \
+      -Dsonar.gitlab.project_id=$CI_PROJECT_PATH \
+      -Dsonar.gitlab.commit_sha=$CI_COMMIT_SHA \
+      -Dsonar.gitlab.ref_name=$CI_COMMIT_REF_NAME \
+      -Dsonar.analysis.serviceGroup=$GROUP_NAME \
+      -Dsonar.analysis.commitId=$CI_COMMIT_SHA  \
+      -Dsonar.projectKey=$GROUP_NAME:$PROJECT_NAME \
+      -Dsonar.gitlab.query_max_retry=200 -DskipTests=false -U
+  only:
+    - master
+    - tags
+    - /^release-.*$/
+    - /^hotfix-.*$/
+
+maven-deploy:
+  stage: mvn-deploy
+  script:
+    - mvn clean install -DskipTests=true deploy
+  only:
+    - master
+    - tags
+    - /^release-.*$/
+
+.auto_cms: &auto_cms |
+  curl -o .auto_cms.sh "${REPO}/devops/ci?token=${Token}&type=lib"
+  function get_merge(){
+    git config user.name ${GITLAB_USER_NAME}
+    git config user.email ${GITLAB_USER_EMAIL}
+    git checkout origin/${1:-"master"}
+    git merge ${CI_COMMIT_SHA} --no-commit --no-ff
+  }
+
+before_script:
+  - *auto_cms
