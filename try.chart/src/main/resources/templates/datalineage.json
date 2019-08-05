@@ -1,0 +1,316 @@
+{
+    "db_name": "tmp",
+    "fields": [
+        {
+            "col_name": "tmp0",
+            "db_name": "tmp0",
+            "source_fields": [
+                {
+                    "col_name": "second_0",
+                    "db_name": "second_0",
+                    "source_fields": [],
+                    "table_name": "second_0"
+                },
+                {
+                    "col_name": "second_1",
+                    "db_name": "second_1",
+                    "source_fields": [],
+                    "table_name": "second_1"
+                },
+                {
+                    "col_name": "second_2",
+                    "db_name": "second_2",
+                    "source_fields": [],
+                    "table_name": "second_2"
+                },
+                {
+                    "col_name": "second_3",
+                    "db_name": "second_3",
+                    "source_fields": [],
+                    "table_name": "second_3"
+                }
+            ],
+            "table_name": "tmp_table0"
+        },
+        {
+            "col_name": "tmp1",
+            "db_name": "tmp1",
+            "source_fields": [
+                {
+                    "col_name": "second_0",
+                    "db_name": "second_0",
+                    "source_fields": [],
+                    "table_name": "second_0"
+                },
+                {
+                    "col_name": "second_1",
+                    "db_name": "second_1",
+                    "source_fields": [],
+                    "table_name": "second_1"
+                },
+                {
+                    "col_name": "second_2",
+                    "db_name": "second_2",
+                    "source_fields": [],
+                    "table_name": "second_2"
+                },
+                {
+                    "col_name": "second_3",
+                    "db_name": "second_3",
+                    "source_fields": [],
+                    "table_name": "second_3"
+                }
+            ],
+            "table_name": "tmp_table1"
+        },
+        {
+            "col_name": "tmp2",
+            "db_name": "tmp2",
+            "source_fields": [
+                {
+                    "col_name": "second_0",
+                    "db_name": "second_0",
+                    "source_fields": [],
+                    "table_name": "second_0"
+                },
+                {
+                    "col_name": "second_1",
+                    "db_name": "second_1",
+                    "source_fields": [],
+                    "table_name": "second_1"
+                },
+                {
+                    "col_name": "second_2",
+                    "db_name": "second_2",
+                    "source_fields": [],
+                    "table_name": "second_2"
+                },
+                {
+                    "col_name": "second_3",
+                    "db_name": "second_3",
+                    "source_fields": [],
+                    "table_name": "second_3"
+                }
+            ],
+            "table_name": "tmp_table2"
+        },
+        {
+            "col_name": "tmp3",
+            "db_name": "tmp3",
+            "source_fields": [
+                {
+                    "col_name": "second_0",
+                    "db_name": "second_0",
+                    "source_fields": [],
+                    "table_name": "second_0"
+                },
+                {
+                    "col_name": "second_1",
+                    "db_name": "second_1",
+                    "source_fields": [],
+                    "table_name": "second_1"
+                },
+                {
+                    "col_name": "second_2",
+                    "db_name": "second_2",
+                    "source_fields": [],
+                    "table_name": "second_2"
+                },
+                {
+                    "col_name": "second_3",
+                    "db_name": "second_3",
+                    "source_fields": [],
+                    "table_name": "second_3"
+                }
+            ],
+            "table_name": "tmp_table3"
+        },
+        {
+            "col_name": "tmp4",
+            "db_name": "tmp4",
+            "source_fields": [
+                {
+                    "col_name": "second_0",
+                    "db_name": "second_0",
+                    "source_fields": [],
+                    "table_name": "second_0"
+                },
+                {
+                    "col_name": "second_1",
+                    "db_name": "second_1",
+                    "source_fields": [],
+                    "table_name": "second_1"
+                },
+                {
+                    "col_name": "second_2",
+                    "db_name": "second_2",
+                    "source_fields": [],
+                    "table_name": "second_2"
+                },
+                {
+                    "col_name": "second_3",
+                    "db_name": "second_3",
+                    "source_fields": [],
+                    "table_name": "second_3"
+                }
+            ],
+            "table_name": "tmp_table4"
+        },
+        {
+            "col_name": "tmp5",
+            "db_name": "tmp5",
+            "source_fields": [
+                {
+                    "col_name": "second_0",
+                    "db_name": "second_0",
+                    "source_fields": [],
+                    "table_name": "second_0"
+                },
+                {
+                    "col_name": "second_1",
+                    "db_name": "second_1",
+                    "source_fields": [],
+                    "table_name": "second_1"
+                },
+                {
+                    "col_name": "second_2",
+                    "db_name": "second_2",
+                    "source_fields": [],
+                    "table_name": "second_2"
+                },
+                {
+                    "col_name": "second_3",
+                    "db_name": "second_3",
+                    "source_fields": [],
+                    "table_name": "second_3"
+                }
+            ],
+            "table_name": "tmp_table5"
+        },
+        {
+            "col_name": "tmp6",
+            "db_name": "tmp6",
+            "source_fields": [
+                {
+                    "col_name": "second_0",
+                    "db_name": "second_0",
+                    "source_fields": [],
+                    "table_name": "second_0"
+                },
+                {
+                    "col_name": "second_1",
+                    "db_name": "second_1",
+                    "source_fields": [],
+                    "table_name": "second_1"
+                },
+                {
+                    "col_name": "second_2",
+                    "db_name": "second_2",
+                    "source_fields": [],
+                    "table_name": "second_2"
+                },
+                {
+                    "col_name": "second_3",
+                    "db_name": "second_3",
+                    "source_fields": [],
+                    "table_name": "second_3"
+                }
+            ],
+            "table_name": "tmp_table6"
+        },
+        {
+            "col_name": "tmp7",
+            "db_name": "tmp7",
+            "source_fields": [
+                {
+                    "col_name": "second_0",
+                    "db_name": "second_0",
+                    "source_fields": [],
+                    "table_name": "second_0"
+                },
+                {
+                    "col_name": "second_1",
+                    "db_name": "second_1",
+                    "source_fields": [],
+                    "table_name": "second_1"
+                },
+                {
+                    "col_name": "second_2",
+                    "db_name": "second_2",
+                    "source_fields": [],
+                    "table_name": "second_2"
+                },
+                {
+                    "col_name": "second_3",
+                    "db_name": "second_3",
+                    "source_fields": [],
+                    "table_name": "second_3"
+                }
+            ],
+            "table_name": "tmp_table7"
+        },
+        {
+            "col_name": "tmp8",
+            "db_name": "tmp8",
+            "source_fields": [
+                {
+                    "col_name": "second_0",
+                    "db_name": "second_0",
+                    "source_fields": [],
+                    "table_name": "second_0"
+                },
+                {
+                    "col_name": "second_1",
+                    "db_name": "second_1",
+                    "source_fields": [],
+                    "table_name": "second_1"
+                },
+                {
+                    "col_name": "second_2",
+                    "db_name": "second_2",
+                    "source_fields": [],
+                    "table_name": "second_2"
+                },
+                {
+                    "col_name": "second_3",
+                    "db_name": "second_3",
+                    "source_fields": [],
+                    "table_name": "second_3"
+                }
+            ],
+            "table_name": "tmp_table8"
+        },
+        {
+            "col_name": "tmp9",
+            "db_name": "tmp9",
+            "source_fields": [
+                {
+                    "col_name": "second_0",
+                    "db_name": "second_0",
+                    "source_fields": [],
+                    "table_name": "second_0"
+                },
+                {
+                    "col_name": "second_1",
+                    "db_name": "second_1",
+                    "source_fields": [],
+                    "table_name": "second_1"
+                },
+                {
+                    "col_name": "second_2",
+                    "db_name": "second_2",
+                    "source_fields": [],
+                    "table_name": "second_2"
+                },
+                {
+                    "col_name": "second_3",
+                    "db_name": "second_3",
+                    "source_fields": [],
+                    "table_name": "second_3"
+                }
+            ],
+            "table_name": "tmp_table9"
+        }
+    ],
+    "table_name": "tmp"
+}

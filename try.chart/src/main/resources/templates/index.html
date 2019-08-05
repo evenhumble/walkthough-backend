@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Metastore Query</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/d3.min.js" charset="utf-8"></script>
+    <script src="js/dagre-d3.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dblineage.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <label class="sr-only" for="db">数据库:</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="db" class="form-control" id="db" placeholder="请输入数据库名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="name">表名:</label>
+                        <div class="col-sm-6">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="请输入表名">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">搜索</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="dbGraphicDiv" style="display:block">
+        <section>
+            <p>数据库字段依赖关系</p>
+        </section>
+        <svg id="svg-dblineage-graphic" width=1280 height=1280></svg>
+    </div>
+
+<script src="js/dblineage.js"></script>
+  
+</body>
+
+</html>

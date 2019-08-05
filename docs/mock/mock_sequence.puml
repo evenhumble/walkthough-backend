@@ -1,0 +1,15 @@
+@startuml
+'ClientA -> Server: Request
+'Server --> ClientA: Response
+'
+'ClientB -> Server: Request
+'Server --> ClientB: Response
+
+ClientA --> MockServer: Request
+MockServer --> RequestRuleEngine
+RequestRuleEngine --> ClientA: RequestMapping Match, Response Return
+RequestRuleEngine --> ServerA: RM not match, forward to real server
+ServerA --> MockServe: forward to Server A
+MockServe --> ClientA: back to client
+
+@enduml

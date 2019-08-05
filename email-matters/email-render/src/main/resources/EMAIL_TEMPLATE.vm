@@ -1,0 +1,83 @@
+<head>
+    <style type="text/css">
+body {
+ font-size:9.0pt;
+ font-family:"微软雅黑",sans-serif
+}
+table {
+    border-width: 1px;
+   // border-color: #666666;
+    border-collapse: collapse;
+    width: 1664px;
+}
+
+th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-corlor: #666666;
+    background-color: #dedede;
+}
+
+td {
+	border-width: 1px;
+    padding: 8px;
+	border-style: solid;
+    border-corlor: #666666;
+    background-color: #ffffff;
+	text-align: center;
+
+}
+tr {
+height:18.75pt
+}
+.leftTd {
+    text-align: left;
+}
+.greenTd {
+    background-color:#A9D08E;
+  }
+
+</style>
+</head>
+
+<body>
+<p>Hi all,</p>
+<p>以下需求今天均已上线:</p>
+<br/>
+
+<table border="1px solid black" cellspacing="0" cellpadding="0">
+	<thead>
+		<tr>
+			<td  class="greenTd" style="width:91">发布日期</th>
+			<td  class="greenTd" style="width:144">项目归类</th>
+			<td  class="greenTd" style="width:223">发布站点</th>
+			<td  class="greenTd" style="width:491">需求列表</th>
+			<td  class="greenTd" style="width:105">需求方</th>
+			<td  class="greenTd" style="width:59">开发</th>
+			<td  class="greenTd" style="width:113">测试</th>
+			<td  class="greenTd" style="width:160">需求状态</th>
+			<td  class="greenTd" style="width:136">上线tag版本</th>
+			<td  class="greenTd" style="width:143">上次有效tag版本</th>
+		</tr>
+	</thead>
+	<tbody>
+    #foreach($elem in $trs)
+		<tr>
+			<td class='leftTd'>$date</td>
+			<td class='leftTd'>#if($elem.projectName) $elem.projectName #end </td>
+			<td class='leftTd'>#if($elem.appName) $elem.appName #end</td>
+			<td class='leftTd'>#if($elem.reqDesc) $elem.reqDesc #end</td>
+			<td class='leftTd'>#if($elem.requester) $elem.requester #end</td>
+            <td class='leftTd'>#if($elem.dev) $elem.dev #end</td>
+            <td class='leftTd'>#if($elem.tester) $elem.tester #end</td>
+            <td class='leftTd'>#if($elem.reqType) $elem.reqType #end</td>
+			<td class='leftTd'>#if($elem.lastRelTag) $elem.lastRelTag #end</td>
+			<td class='leftTd'>#if($elem.currentRelTag) $elem.currentRelTag #end</td>
+		</tr>
+		#end
+	</tbody>
+</table>
+
+
+</body>

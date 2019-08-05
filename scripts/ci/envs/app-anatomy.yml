@@ -1,0 +1,17 @@
+cf-artifact-file: target/distributions/example-${GO_PIPELINE_LABEL}.zip
+cf-username: tools-engineering@groups.springer.com
+ci-server-host: te-prod-go-01.springer-sbm.com
+environment-groups:
+- name: dev
+  manifest: manifest-dev.yml
+- name: staging
+  manifest: manifest-staging.yml
+- name: live
+  manifest: manifest-live.yml
+go-pipeline-group: Misc.Microservices
+hipchat-room: honey bee
+language: java
+test-artifact-dirs: ['target/reports']
+
+
+require-hook-files: true

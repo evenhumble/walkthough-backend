@@ -1,0 +1,7 @@
+---
+application:
+- instance: 2
+  memory: 1G
+  os: centOS7
+  env:
+    - METRICS_HOST: localhost:9090

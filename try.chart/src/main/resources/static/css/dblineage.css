@@ -1,0 +1,32 @@
+g.level_1 > rect {
+    fill: #feaf9c
+  }
+
+g.level_2 > rect {
+   fill: #f8ff98
+}
+
+g.level_3 > rect {
+  fill: #a4a4df
+}
+
+g.level_4 > rect{
+  fill: #e096de
+}
+
+  text {
+    font-weight: 300;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serf;
+    font-size: 14px;
+  }
+
+  .node rect {
+    stroke: #999;
+    fill: #fff;
+    stroke-width: 1.5px;
+  }
+
+  .edgePath path {
+    stroke: #333;
+    stroke-width: 1.5px;
+  }

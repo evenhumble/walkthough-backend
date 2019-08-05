@@ -1,0 +1,33 @@
+= SpringBoot Data Access
+v0.1 2017-12-25
+:toc:
+:imagedir: assets/images
+
+== 1. Quick Setup
+
+database stuff, like how to connect database, or how to execute
+As SpringBoot is used, I don't need to worry about the
+sql statement in JAVA.
+
+- in-memory database
+- database - mysql
+- database - postgresql
+
+== 2. Overall JPA
+
+- Core Concepts
+- QueryMethod
+- Customer the base Repository
+- JPA
+
+- Entity
+- DAO/Repositories Usage
+- Advanced:
+  * JOIN
+  * SQL
+  * QueryDSLRepository
+  * EventListener
+  * Predicate Execution
+  * How to Seperate Read/Write
+  * Sharding
+  * Service

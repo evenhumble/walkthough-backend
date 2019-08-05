@@ -1,0 +1,5 @@
+data/*
+/tcexecutor.clients/src/test/java/io/hedwig/tcexecutor/clients/gitlab/GitLabClientTest.java
+SSHTemplateTest.java
+JMeterCommandTemplateTest.java
+*.tgz

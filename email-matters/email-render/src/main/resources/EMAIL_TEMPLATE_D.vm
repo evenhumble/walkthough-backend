@@ -1,0 +1,73 @@
+<head>
+    <style type="text/css">
+body {
+ font-size:9.0pt;
+ font-family:"微软雅黑",sans-serif
+}
+table {
+    border-width: 1px;
+   // border-color: #666666;
+    border-collapse: collapse;
+    table-layout:fix;
+}
+
+th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-corlor: #666666;
+    background-color: #dedede;
+}
+
+td {
+	border-width: 1px;
+    padding: 8px;
+	border-style: solid;
+    border-corlor: #666666;
+    background-color: #ffffff;
+	text-align: center;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+tr {
+height:18.75pt
+}
+.leftTd {
+    text-align: left;
+}
+.greenTd {
+    background-color:#A9D08E;
+  }
+
+</style>
+</head>
+
+<body>
+<p>Hi all,</p>
+<p>$emailGreeting :</p>
+<br/>
+
+<table border="1px solid black" cellspacing="0" cellpadding="0">
+	<thead>
+		<tr>
+		#foreach($header in $headers)
+			<td  class="greenTd leftTd" >$header</th>
+        #end
+		</tr>
+	</thead>
+	<tbody>
+	    #foreach($row in $result)
+	    <tr>
+	        #foreach($header in $headers)
+			<td class='leftTd' #if(${headersWidth.get($header)}) style="width:${headersWidth.get($header)}") #end>
+			#if(${row.get($header)}) ${row.get($header)} #end</td>
+			#end
+		</tr>
+		#end
+	</tbody>
+</table>
+
+
+</body>

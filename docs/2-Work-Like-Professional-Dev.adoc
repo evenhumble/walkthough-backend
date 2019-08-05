@@ -1,0 +1,17 @@
+= Work Like a Professional Dev
+
+- Git/Github Set up
+- Unit Testing
+- CI Setting
+- Coverage Report
+- Agile and Self-Motivated
+- Documentation
+
+== 1. Git/Github Setup
+
+== 2. Unit Testing
+
+== 3. CI
+
+== 4. Coverage Report
+

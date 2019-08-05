@@ -1,0 +1,245 @@
+= SpringBoot Hello World Restful API
+
+== 1. Conceptions about web api
+
+- Http Request/Response Model
+- MVC
+- Restful
+- SpringBoot Restful API
+
+== 2. Build A Hello World Restful API by SpringBoot
+
+For a Simple Restful API, it is just need to create two classes:
+
+- Application Main Entry for startup
+- HelloWorld Controller Class
+
+=== 2.1 Maven Project Setup
+
+Steps:
+- Open your favorite IDE(I prefer IntelliJ IDEA)
+- Create a MAVEN Project
+- Add Dependency for SpringBoot Web Project
+
+[source,xml]
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dh-spring</artifactId>
+        <groupId>io.hedwig</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>springboot-handson</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${springboot.version}</version>
+                <configuration>
+                    <executable>true</executable>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <target>1.8</target>
+                    <source>1.8</source>
+                    <compilerVersion>1.8</compilerVersion>
+                    <!-- put your configurations here -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+----
+
+In this POM file, it describe the project information:
+
+- Parent Project
+- Project name and artifact name
+- Dependencies under the dependencies tag
+- Build info:
+  * SpringBoot Plugin: For build runnable JAR
+  * Maven Compile Plugin: Set the Compile options,here is JDK Version.
+
+=== 2.2 Running the SpringBoot Application
+
+it is quite simple to run an SpringBoot Application
+
+[source,java]
+----
+@SpringBootApplication
+public class HandsOnApplication {
+  public static void main(String[] args) {
+    SpringApplication.run(HandsOnApplication.class,args);
+  }
+}
+----
+
+This is the entry point of a SpringBoot Web Application.
+
+=== 2.3 Build the Hello World Restful API
+
+In this case, I only want to response Hello World to the request,
+so it is simple to do so, please see the follow codes:
+
+[source,java]
+----
+@Controller
+public class HelloWorldController {
+  String helloWorld = "HELLO WORLD!";
+  private final static String EMPTY = "";
+  @RequestMapping(value = "/hello", method = RequestMethod.GET,
+      produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+  public ResponseEntity<String> helloWorld() {
+    return ResponseEntity.ok(this.helloWorld);
+  }
+}
+----
+
+=== 4. Run the Application
+
+Run the HandsOnApplication class, if everything goes well,
+use:
+
+[source,shell]
+----
+curl http://localhost:8080/hello
+----
+
+then get the response:
+[source,shell]
+HELLO WORLD!
+
+=== 5. Build the project and run it
+
+As it is a MAVEN Project, so:
+[source,shell]
+----
+mvn clean package
+----
+
+Then go to the target folder, run following commands:
+[source,shell]
+----
+java -jar springboot-handson-1.0-SNAPSHOT.jar
+----
+
+The Application is up now! And send
+[source,shell]
+----
+curl http://localhost:8080/hello
+----
+
+The response is HELLO WORLD!, so right now, the HelloWorld Web Application
+is completed. But If obviously, these is a question that How to Build a Restful Style
+Hello World Web Application?
+
+=== 6. Build Restful Style Hello World
+
+Restful Style Web Application often has four verb:
+- GET
+- PUT
+- POST
+- DELETE
+
+in above, The GET is actually completed, so I need to build Apis for the remaining three verb.
+It is simple too:
+
+[source,java]
+----
+package io.hedwig.springboot.handson.helloworld;
+
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ * @author: patrick
+ */
+@Controller
+public class HelloWorldController {
+
+  String helloWorld = "HELLO WORLD!";
+  private final static String EMPTY = "";
+
+  @RequestMapping(value = "/hello", method = RequestMethod.GET,
+      produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+  public ResponseEntity<String> helloWorld() {
+    return ResponseEntity.ok(this.helloWorld);
+  }
+
+  @RequestMapping(value = "/hello", method = RequestMethod.DELETE,
+      produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+  public ResponseEntity<String> deleteHelloWorld() {
+    this.helloWorld = EMPTY;
+    return ResponseEntity.ok(this.helloWorld);
+  }
+
+  @RequestMapping(value = "/hello", method = RequestMethod.PUT,
+      produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+  public ResponseEntity<String> putHelloWorld(@RequestBody HelloWorldDTO helloWorldDTO) {
+    this.helloWorld = helloWorldDTO.getHelloWorld();
+    return ResponseEntity.ok(this.helloWorld);
+  }
+
+  @RequestMapping(value = "/hello", method = RequestMethod.POST,
+      produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+  public ResponseEntity<String> postHelloWorld(@RequestBody HelloWorldDTO helloWorldDTO) {
+    this.helloWorld = helloWorldDTO.getHelloWorld();
+    return ResponseEntity.ok(this.helloWorld);
+  }
+}
+----
+
+In this class, I introduced a DTO(Data Transfer Object) class. It is for mapping the
+data transferred by the HTTP Protocol.
+
+[source,java]
+----
+public class HelloWorldDTO {
+
+  @JsonProperty
+  private String helloWorld;
+
+  public String getHelloWorld() {
+    return helloWorld;
+  }
+
+  public void setHelloWorld(String helloWorld) {
+    this.helloWorld = helloWorld;
+  }
+}
+----
+
+

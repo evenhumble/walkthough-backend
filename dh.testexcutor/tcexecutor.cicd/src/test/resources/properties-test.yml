@@ -1,0 +1,25 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 19090
+
+  adminConnectors:
+    - type: http
+      port: 19091
+
+password: test-password
+
+jira:
+  username: gitlab
+  password: gitlab
+  url: http://localhost:1338
+  transitions:
+      - name: Close
+        # Case insensitive
+        keywords:
+          - close
+          - fix
+
+gitlab:
+  private_token: N1bJ4n8-rbFAEf8Syrh2
+  url: http://localhost:1339

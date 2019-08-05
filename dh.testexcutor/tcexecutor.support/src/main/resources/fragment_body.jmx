@@ -1,0 +1,16 @@
+<collectionProp name="Arguments.arguments">
+    <elementProp name="key" elementType="HTTPArgument">
+        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+        <stringProp name="Argument.value">value</stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+        <boolProp name="HTTPArgument.use_equals">true</boolProp>
+        <stringProp name="Argument.name">key</stringProp>
+    </elementProp>
+    <elementProp name="k1" elementType="HTTPArgument">
+        <boolProp name="HTTPArgument.always_encode">false</boolProp>
+        <stringProp name="Argument.value">v1</stringProp>
+        <stringProp name="Argument.metadata">=</stringProp>
+        <boolProp name="HTTPArgument.use_equals">true</boolProp>
+        <stringProp name="Argument.name">k1</stringProp>
+    </elementProp>
+</collectionProp>

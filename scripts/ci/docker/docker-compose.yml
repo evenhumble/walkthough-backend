@@ -1,0 +1,15 @@
+# This Fig configuration file is meant to be used with fig-env. See
+# https://bitbucket.org/springersbm/fig-env.
+
+code:
+  image: te-docker.docker-registry.tools.springer-sbm.com/fig-env-java-8
+  dns: *DNS
+  volumes:
+    - .:/home/dev/code
+    - $HOME/.gradle:/home/dev/.gradle
+
+deploy:
+  image: te-docker.docker-registry.tools.springer-sbm.com/fig-env-deploy-to-cf
+  dns: *DNS
+  volumes:
+    - .:/home/dev/code

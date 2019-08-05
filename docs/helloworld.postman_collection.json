@@ -1,0 +1,123 @@
+{
+	"info": {
+		"name": "helloworld",
+		"_postman_id": "3ed79c4f-1b14-cbeb-ec97-dacfbb9857a1",
+		"description": "# Hello World APIs\n\n- GET\n- PUT\n- DELETE\n- POST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get_HelloWorld",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello"
+					]
+				},
+				"description": "http://localhost:8080/hello"
+			},
+			"response": []
+		},
+		{
+			"name": "POST_HelloWorld",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"helloWorld\":\"hello man!!!!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello"
+					]
+				},
+				"description": "http://localhost:8080/hello"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_HelloWorld",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"helloWorld\":\"hello man!!!!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello"
+					]
+				},
+				"description": "http://localhost:8080/hello"
+			},
+			"response": []
+		},
+		{
+			"name": "PUT_HelloWorld",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"helloWorld\":\"hello man!!!!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello"
+					]
+				},
+				"description": "http://localhost:8080/hello"
+			},
+			"response": []
+		}
+	]
+}

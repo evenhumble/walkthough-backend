@@ -1,0 +1,19 @@
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/kata?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: password
+      validationQuery: select 1
+      testWhileIdle: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL57Dialect

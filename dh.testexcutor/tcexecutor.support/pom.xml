@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>dh.testexcutor</artifactId>
+        <groupId>io.hedwig</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>tcexecutor.support</artifactId>
+
+    <dependencies>
+
+
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.jmeter/ApacheJMeter_java &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.jmeter</groupId>-->
+            <!--<artifactId>ApacheJMeter_java</artifactId>-->
+            <!--<version>4.0</version>-->
+        <!--</dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/com.jcabi/jcabi-ssh -->
+        <!--<dependency>-->
+            <!--<groupId>com.jcabi</groupId>-->
+            <!--<artifactId>jcabi-ssh</artifactId>-->
+            <!--<version>1.6.1</version>-->
+        <!--</dependency>-->
+        <!-- https://mvnrepository.com/artifact/com.jcraft/jsch -->
+        <!--<dependency>-->
+            <!--<groupId>com.jcraft</groupId>-->
+            <!--<artifactId>jsch</artifactId>-->
+            <!--<version>0.1.54</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.hierynomus</groupId>-->
+            <!--<artifactId>sshj</artifactId>-->
+            <!--<version>0.26.0</version>-->
+        <!--</dependency>-->
+        <!-- https://mvnrepository.com/artifact/ch.ethz.ganymed/ganymed-ssh2 -->
+        <dependency>
+            <groupId>ch.ethz.ganymed</groupId>
+            <artifactId>ganymed-ssh2</artifactId>
+            <version>build210</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jtwig</groupId>
+            <artifactId>jtwig-core</artifactId>
+            <version>5.87.0.RELEASE</version>
+        </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-rest</artifactId>
+            </dependency>
+        <!-- https://mvnrepository.com/artifact/io.swagger/swagger-parser -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-parser</artifactId>
+            <version>1.0.37</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.springfox/springfox-bean-validators -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-bean-validators</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_components</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_http</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jmeter</groupId>
+            <artifactId>ApacheJMeter_core</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/kg.apc/jmeter-plugins-extras -->
+        <!--<dependency>-->
+            <!--<groupId>kg.apc</groupId>-->
+            <!--<artifactId>jmeter-plugins-extras</artifactId>-->
+            <!--<version>1.2.1</version>-->
+        <!--</dependency>-->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+        </dependency>
+
+
+    </dependencies>
+</project>
