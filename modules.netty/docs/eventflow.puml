@@ -1,0 +1,12 @@
+@startuml
+InboundRequest --> InboundEvent
+InboundEvent --> "Inbound Handler-1"
+InboundEvent --> "Inbound Handler-2"
+InboundEvent --> "Inbound Handler-3"
+InboundEvent --> OutboundEvent
+OutboundEvent--> "Outbound Handler-1"
+OutboundEvent--> "Outbound Handler-2"
+OutboundEvent--> "Outbound Handler-3"
+OutboundEvent--> OutBoundResponse
+
+@enduml

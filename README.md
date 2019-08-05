@@ -1,4 +1,3 @@
-# Walkthrough Backend Tech
+# READ ME
 
-- Dubbo Demo
-- Netty Demo
+For Learning different JAVA Modules

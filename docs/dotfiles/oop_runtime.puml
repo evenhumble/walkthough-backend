@@ -1,0 +1,7 @@
+@startuml
+Object1-> Object2: methodA()
+Object2 --> Object3: methodB()
+
+Object3-> Object2: return
+Object2-> Object1: return
+@enduml

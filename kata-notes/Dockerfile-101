@@ -1,0 +1,4 @@
+FROM nginx:1.11-alpine  #base image
+COPY . /usr/share/nginx/html # commands
+EXPOSE 80 # expose port
+CMD ["nginx", "-g", "daemon off;"] # default command

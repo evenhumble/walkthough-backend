@@ -1,0 +1,14 @@
+@startuml
+socket1--> read/write 1
+--> "Selector"
+-->Threads
+
+socket2--> read/write 2
+--> "Selector"
+-->Threads
+
+socket3--> read/write 3
+--> "Selector"
+-->Threads
+
+@enduml

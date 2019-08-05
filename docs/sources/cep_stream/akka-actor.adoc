@@ -1,0 +1,6 @@
+= Akka
+
+== The challenge of encapsulation
+
+- A core pillar of OOP is encapsulation.
+

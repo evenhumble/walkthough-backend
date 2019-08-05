@@ -1,0 +1,16 @@
+@startuml
+Request1  --> "Socket Accept1"
+--> read/write 1
+--> "Run Thread"
+-->Response1
+
+Request2  --> "Socket Accept2"
+--> read/write 2
+--> "Run Thread 2"
+-->Response2
+
+Request3 --> "Socket Accept3"
+--> read/write 3
+--> "Run Thread 3"
+-->Response3
+@enduml

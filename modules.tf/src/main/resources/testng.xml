@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="cas登录" verbose="1" >
+<listeners>
+    <listener class-name="io.hedwig.modules.tf.testng.TestListenerDemo"></listener>
+</listeners>
+    <test name="cas登录"   >
+        <classes>
+            <class name="io.hedwig.modules.tf.testng.TestNGDemo"></class>
+        </classes>
+    </test>
+</suite>
+
+
