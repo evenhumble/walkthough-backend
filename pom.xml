@@ -7,6 +7,8 @@
     <modules>
         <module>dubbo-demo</module>
         <module>netty-demo</module>
+        <module>dh-fileservice</module>
+        <module>prometheus-demo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
