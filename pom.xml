@@ -9,6 +9,7 @@
         <module>netty-demo</module>
         <module>dh-fileservice</module>
         <module>prometheus-demo</module>
+        <module>qkafka-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

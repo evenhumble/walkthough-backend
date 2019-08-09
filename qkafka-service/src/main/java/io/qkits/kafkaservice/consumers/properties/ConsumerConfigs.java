@@ -1,8 +1,5 @@
-package io.hedwig.modules.kafka.consumers.properties;
+package io.qkits.kafkaservice.consumers.properties;
 
-import org.apache.kafka.clients.consumer.KafkaConsumer;
-
-import java.util.Arrays;
 import java.util.Properties;
 
 /**

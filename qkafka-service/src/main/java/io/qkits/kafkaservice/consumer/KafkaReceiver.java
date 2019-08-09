@@ -1,4 +1,4 @@
-//package io.hedwig.kafkatry.consumer;
+package io.qkits.kafkaservice.consumer;//package io.hedwig.kafkatry.consumer;
 //
 //import org.apache.kafka.clients.consumer.ConsumerRecord;
 //import org.springframework.kafka.annotation.KafkaListener;

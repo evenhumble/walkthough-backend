@@ -1,4 +1,4 @@
-package io.hedwig.kafkatry;
+package io.qkits.kafkaservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

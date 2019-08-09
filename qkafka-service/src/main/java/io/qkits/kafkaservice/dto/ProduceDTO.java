@@ -1,4 +1,4 @@
-package io.hedwig.kafkatry.dto;
+package io.qkits.kafkaservice.dto;
 
 import lombok.Data;
 

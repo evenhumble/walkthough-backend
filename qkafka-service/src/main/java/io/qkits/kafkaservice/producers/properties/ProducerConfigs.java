@@ -1,4 +1,4 @@
-package io.hedwig.modules.kafka.producers.properties;
+package io.qkits.kafkaservice.producers.properties;
 
 import java.util.Properties;
 

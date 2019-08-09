@@ -1,11 +1,12 @@
-package io.hedwig.kafkatry.producer;
+package io.qkits.kafkaservice.producer;
 
-import io.hedwig.kafkatry.dto.ProduceDTO;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.stereotype.Component;
 import java.util.Properties;
+
+import io.qkits.kafkaservice.dto.ProduceDTO;
 
 @Component
 public class KProducerFactory {

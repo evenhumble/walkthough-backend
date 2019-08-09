@@ -1,4 +1,4 @@
-package io.hedwig.kafkatry.producer;
+package io.qkits.kafkaservice.producer;
 
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.apache.kafka.clients.producer.KafkaProducer;
