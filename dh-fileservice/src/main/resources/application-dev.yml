@@ -1,20 +1,24 @@
 localfilestore:
-    uploadPath: /www/fileservice/uploaded_files/
-    basePath: /www/fileservice/backup_files/
+    uploadPath: /tmp/uploaded_files/
+    basePath: /tmp/backup_files/
 
 spring:
   datasource:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/kata?useUnicode=true&characterEncoding=utf8
-      username: root
-      password: password
-      validationQuery: select 1
-      testWhileIdle: true
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/qa?useSSL=false
+      username: qa
+      password: qa123456
+      hikari:
+        maximum-pool-size: 50
+        minimum-idle: 5
+        connection-timeout: 360000
+        pool-name: qe-fileservice
+        leak-detection-threshold: 4
+        max-lifetime: 3000
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
-      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
       properties:
         hibernate:
-          dialect: org.hibernate.dialect.MySQL57Dialect
+          dialect: org.hibernate.dialect.MySQL5InnoDBDialect
