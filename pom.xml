@@ -13,6 +13,7 @@
         <module>wiremock-demo</module>
         <module>redis-servie</module>
         <module>config-service</module>
+        <module>redis-demos</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
