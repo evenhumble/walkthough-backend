@@ -10,6 +10,7 @@
         <module>dh-fileservice</module>
         <module>prometheus-demo</module>
         <module>qkafka-service</module>
+        <module>wiremock-demo</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
