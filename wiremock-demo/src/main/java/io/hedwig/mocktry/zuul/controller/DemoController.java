@@ -1,4 +1,4 @@
-package io.dh.tcexecutor.apifarm.controller;
+package io.hedwig.mocktry.zuul.controller;
 
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.web.bind.annotation.GetMapping;

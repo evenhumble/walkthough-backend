@@ -1,4 +1,4 @@
-package io.dh.tcexecutor.apifarm.config;
+package io.hedwig.mocktry.zuul.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ServerProperties;

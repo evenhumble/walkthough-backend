@@ -1,2 +1,5 @@
 server:
   port: 9190
+ribbon:
+  eureka:
+    enabled=false:
