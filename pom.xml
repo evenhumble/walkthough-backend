@@ -11,9 +11,12 @@
         <module>prometheus-demo</module>
         <module>qkafka-service</module>
         <module>wiremock-demo</module>
-        <module>redis-servie</module>
         <module>config-service</module>
         <module>redis-demos</module>
+        <!--<module>jobs-demos</module>-->
+        <module>datasources</module>
+        <module>starter-demos</module>
+        <module>spring-internal</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
