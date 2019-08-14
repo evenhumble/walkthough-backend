@@ -17,6 +17,7 @@
         <module>datasources</module>
         <module>starter-demos</module>
         <module>spring-internal</module>
+        <module>aop-logging</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -17,8 +17,12 @@ public class PropertyValues {
 
   public void add(PropertyValue value) {
     if (!values.add(value)) {
-      throw new IllegalStateException("dumplcation value ! value = "
+      throw new IllegalStateException("duplication value ! value = "
                                       + value);
     }
+  }
+
+  public static void main(String[] args) {
+    System.out.println("Hello World!");
   }
 }
