@@ -20,6 +20,7 @@
         <module>aop-logging</module>
         <module>allure-report-parser</module>
         <module>kotlin-demos</module>
+        <module>spring-micorservices</module>
 
     </modules>
     <parent>
