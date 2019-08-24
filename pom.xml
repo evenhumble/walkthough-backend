@@ -19,12 +19,13 @@
         <module>spring-internal</module>
         <module>aop-logging</module>
         <module>allure-report-parser</module>
+        <module>kotlin-demos</module>
 
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.6.RELEASE</version>
+        <version>2.1.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>io.qkits</groupId>

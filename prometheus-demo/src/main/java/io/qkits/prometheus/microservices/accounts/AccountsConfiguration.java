@@ -21,12 +21,9 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 /**
  * The accounts Spring configuration.
  * 
- * @author Paul Chapman
  */
 @Configuration
 @ComponentScan
-@EntityScan("io.pivotal.microservices.accounts")
-@EnableJpaRepositories("io.pivotal.microservices.accounts")
 @PropertySource("classpath:db-config.properties")
 public class AccountsConfiguration {
 

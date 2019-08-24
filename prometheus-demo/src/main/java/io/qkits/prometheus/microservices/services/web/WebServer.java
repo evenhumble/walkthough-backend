@@ -2,8 +2,8 @@ package io.qkits.prometheus.microservices.services.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+//import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+//import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.client.RestTemplate;
@@ -12,10 +12,9 @@ import org.springframework.web.client.RestTemplate;
  * Accounts web-server. Works as a microservice client, fetching data from the
  * Account-Service. Uses the Discovery Server (Eureka) to find the microservice.
  * 
- * @author Paul Chapman
  */
 @SpringBootApplication
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 @ComponentScan(useDefaultFilters = false) // Disable component scanner
 public class WebServer {
 
@@ -43,7 +42,7 @@ public class WebServer {
 	 * 
 	 * @return
 	 */
-	@LoadBalanced
+//	@LoadBalanced
 	@Bean
 	RestTemplate restTemplate() {
 		return new RestTemplate();

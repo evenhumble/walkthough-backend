@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.pivotal.microservices.exceptions.AccountNotFoundException;
+import io.qkits.prometheus.microservices.exceptions.AccountNotFoundException;
+
 
 /**
  * A RESTFul controller for accessing account information.
  * 
- * @author Paul Chapman
  */
 @RestController
 public class AccountsController {

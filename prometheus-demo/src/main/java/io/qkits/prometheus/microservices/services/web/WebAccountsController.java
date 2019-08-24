@@ -1,6 +1,5 @@
 package io.qkits.prometheus.microservices.services.web;
 
-import io.pivotal.microservices.services.web.Account;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -20,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Client controller, fetches Account info from the microservice via
  * {@link WebAccountsService}.
  * 
- * @author Paul Chapman
  */
 @Controller
 public class WebAccountsController {
