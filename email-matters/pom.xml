@@ -15,10 +15,9 @@
 	<description>SpringBoot For Email</description>
 
 	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
-		<relativePath/> <!-- lookup parent fromAddress repository -->
+		<artifactId>walkthrough</artifactId>
+		<groupId>io.qkits</groupId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<properties>
