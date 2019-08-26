@@ -3,11 +3,8 @@ package io.hedwig.dh.sprintinternal.demos;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * Created by BYSocket on 2015/12/10.
- */
 @Configuration
-public class Beans {
+public class BeanConfigurations {
 
     @Bean(name = "car")
     public Car buildCar(){

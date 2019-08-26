@@ -1,4 +1,4 @@
-package io.hedwig.dh.sprintinternal.demos.
+package io.hedwig.dh.sprintinternal.demos.clazz;
 
 import java.lang.annotation.Annotation;
 import java.util.List;

@@ -1,5 +1,8 @@
 package io.hedwig.dh.sprintinternal;
 
+/**
+ * Bean References: Bean Class
+ */
 public class BeanReference {
 
     private String name;

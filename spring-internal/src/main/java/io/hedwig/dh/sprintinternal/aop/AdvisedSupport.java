@@ -3,36 +3,39 @@ package io.hedwig.dh.sprintinternal.aop;
 
 import org.aopalliance.intercept.MethodInterceptor;
 
+/**
+ * Advise Support Tools
+ */
 public class AdvisedSupport {
 
-    private TargetSource targetSource;
+  private TargetSource targetSource;
 
-    private MethodInterceptor methodInterceptor;
+  private MethodInterceptor methodInterceptor;
 
-    private MethodMatcher methodMatcher;
+  private MethodMatcher methodMatcher;
 
-    public TargetSource getTargetSource() {
-        return targetSource;
-    }
+  public TargetSource getTargetSource() {
+    return targetSource;
+  }
 
-    public void setTargetSource(TargetSource targetSource) {
-        this.targetSource = targetSource;
-    }
+  public void setTargetSource(TargetSource targetSource) {
+    this.targetSource = targetSource;
+  }
 
-    public MethodInterceptor getMethodInterceptor() {
-        return methodInterceptor;
-    }
+  public MethodInterceptor getMethodInterceptor() {
+    return methodInterceptor;
+  }
 
-    public void setMethodInterceptor(MethodInterceptor methodInterceptor) {
-        this.methodInterceptor = methodInterceptor;
-    }
+  public void setMethodInterceptor(MethodInterceptor methodInterceptor) {
+    this.methodInterceptor = methodInterceptor;
+  }
 
-    public MethodMatcher getMethodMatcher() {
-        return methodMatcher;
-    }
+  public MethodMatcher getMethodMatcher() {
+    return methodMatcher;
+  }
 
-    public void setMethodMatcher(MethodMatcher methodMatcher) {
-        this.methodMatcher = methodMatcher;
-    }
+  public void setMethodMatcher(MethodMatcher methodMatcher) {
+    this.methodMatcher = methodMatcher;
+  }
 
 }

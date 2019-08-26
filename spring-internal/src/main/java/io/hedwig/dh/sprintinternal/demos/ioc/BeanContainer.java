@@ -1,11 +1,11 @@
 package io.hedwig.dh.sprintinternal.demos.ioc;
 
-import org.spring.classscanner.ClassScannerHelper;
-import org.spring.ioc.annotation.Bean;
 
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
+import io.hedwig.dh.sprintinternal.demos.clazz.ClassScannerHelper;
 
 /**
  * Bean容器

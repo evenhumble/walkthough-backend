@@ -1,8 +1,5 @@
-package io.hedwig.dh.sprintinternal.demos.
+package io.hedwig.dh.sprintinternal.demos.clazz;
 
-import org.spring.classscanner.impl.DefaultClassScanner;
-import org.spring.classscanner.util.ObjectUtil;
-import org.spring.util.StringUtil;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

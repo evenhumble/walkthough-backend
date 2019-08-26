@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 
 import io.hedwig.dh.sprintinternal.BeanDefinition;
 import io.hedwig.dh.sprintinternal.BeanReference;
+import io.hedwig.dh.sprintinternal.PropertyValue;
 import io.hedwig.dh.sprintinternal.aop.BeanFactoryAware;
 
 
