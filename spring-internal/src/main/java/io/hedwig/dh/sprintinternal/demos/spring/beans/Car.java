@@ -1,4 +1,4 @@
-package io.hedwig.dh.sprintinternal.demos;
+package io.hedwig.dh.sprintinternal.demos.spring.beans;
 
 /**
  * Created by BYSocket on 2015/12/10.

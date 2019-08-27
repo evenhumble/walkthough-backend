@@ -1,7 +1,10 @@
-package io.hedwig.dh.sprintinternal.demos;
+package io.hedwig.dh.sprintinternal.demos.spring;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import io.hedwig.dh.sprintinternal.demos.spring.beans.Car;
+
 
 @Configuration
 public class BeanConfigurations {
