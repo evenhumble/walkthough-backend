@@ -22,6 +22,7 @@
         <module>spring-micorservices</module>
         <module>aop-collections</module>
         <module>email-matters</module>
+        <module>qboot</module>
 
     </modules>
     <parent>
