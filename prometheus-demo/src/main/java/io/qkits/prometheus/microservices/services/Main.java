@@ -1,3 +1,4 @@
+/*
 package io.qkits.prometheus.microservices.services;
 
 
@@ -5,12 +6,14 @@ import io.qkits.prometheus.microservices.services.accounts.AccountsServer;
 import io.qkits.prometheus.microservices.services.registration.RegistrationServer;
 import io.qkits.prometheus.microservices.services.web.WebServer;
 
+*/
 /**
  * Allow the servers to be invoked from the command-line. The jar is built with this as the
  * <code>Main-Class</code> in the jar's <code>MANIFEST.MF</code>.
  *
  * @author Paul Chapman
- */
+ *//*
+
 public class Main {
 
   public static void main(String[] args) {
@@ -52,3 +55,4 @@ public class Main {
         + "'accounts' or 'web' and server-port > 1024");
   }
 }
+*/

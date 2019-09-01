@@ -1,0 +1,14 @@
+pipeline {
+    agent{
+        dockerfile {
+            filename 'docker/Dockerfile'
+        }
+    }
+    stages{
+        stage('Build'){
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+    }
+}
