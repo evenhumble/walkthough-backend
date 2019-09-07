@@ -23,6 +23,7 @@
         <module>aop-collections</module>
         <module>email-matters</module>
         <module>qboot</module>
+        <module>boot-mybatis-plus-demo</module>
 
     </modules>
     <parent>
