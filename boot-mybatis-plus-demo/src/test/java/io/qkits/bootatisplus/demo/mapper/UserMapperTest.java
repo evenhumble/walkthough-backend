@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.autoconfigure.data.jdbc.DataJdbcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -15,7 +14,6 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.*;
@@ -55,6 +53,26 @@ public class UserMapperTest {
         query.put("age",18);
         List<User> users = userMapper.selectByMap(query);
         System.out.println(users);
+    }
+
+    @Test
+    public void hardDeleteOfBaseMapper(){
+        log.info("hard delete .....");
+        int result = userMapper.deleteById(1L);
+        assertThat(result,is(1));
+    }
+
+    @Test
+    public void updateOfBaseMapper(){
+        log.info("start update ......");
+        User user = new User().setId(1L).setEmail("test@test.com").setAge(12);
+        int result = userMapper.updateById(user);
+        assertThat(result,is(1));
+    }
+
+    @Test
+    public void updateWithQueryWrapper(){
+
     }
 
 }
