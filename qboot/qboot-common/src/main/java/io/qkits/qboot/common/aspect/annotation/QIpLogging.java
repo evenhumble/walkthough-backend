@@ -6,16 +6,14 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import io.qkits.qboot.common.logging.LogTypeConstants;
-
 
 /**
- * 系统日志注解
+ *
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface QLogging {
+public @interface QIpLogging {
 
   /**
    * 日志内容

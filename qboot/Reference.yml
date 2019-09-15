@@ -1,0 +1,12 @@
+reference:
+  codes:
+    - https://gitee.com/weixin54321a/ApiStarter.git
+    - https://github.com/DXY-F2E/api-mocker.git
+    - https://gitee.com/shuaiqiyu/soul.git
+    - https://github.com/YMFE/yapi.git
+    - https://github.com/danielvdende/VizServe.git
+  sites:
+    - https://github.com/ZHENFENG13/My-Blog.git
+  keywords:
+    - spring-bulk-api
+    - tiny-spring

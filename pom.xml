@@ -17,12 +17,11 @@
         <module>datasources</module>
         <module>starter-demos</module>
         <module>spring-internal</module>
-        <module>allure-report-parser</module>
         <module>kotlin-demos</module>
         <module>spring-micorservices</module>
         <module>aop-collections</module>
         <module>email-matters</module>
-        <module>qboot</module>
+        <!--<module>qboot</module>-->
         <module>boot-mybatis-plus-demo</module>
 
     </modules>
