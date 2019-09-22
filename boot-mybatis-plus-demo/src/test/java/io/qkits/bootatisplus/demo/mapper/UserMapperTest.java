@@ -1,6 +1,7 @@
 package io.qkits.bootatisplus.demo.mapper;
 
-import com.baomidou.mybatisplus.core.conditions.AbstractWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import io.qkits.bootatisplus.demo.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
@@ -15,8 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @Slf4j
@@ -43,7 +43,7 @@ public class UserMapperTest {
         user.setId(10L);
         user.setName("name");
         int count = userMapper.insert(user);
-        assertThat(count,is(1));
+        assertThat(count).isEqualTo(1);
     }
 
     @Test
@@ -59,7 +59,7 @@ public class UserMapperTest {
     public void hardDeleteOfBaseMapper(){
         log.info("hard delete .....");
         int result = userMapper.deleteById(1L);
-        assertThat(result,is(1));
+        assertThat(result).isEqualTo(1);
     }
 
     @Test
@@ -67,12 +67,31 @@ public class UserMapperTest {
         log.info("start update ......");
         User user = new User().setId(1L).setEmail("test@test.com").setAge(12);
         int result = userMapper.updateById(user);
-        assertThat(result,is(1));
+        assertThat(result).isEqualTo(1);
     }
 
     @Test
     public void updateWithQueryWrapper(){
+        int updatedCount = userMapper.update(
+                new User().setName("mp"),
+                Wrappers.<User>lambdaUpdate()
+                .set(User::getAge,3)
+                .eq(User::getId,2)
+        );
+
+        assertThat(updatedCount).isEqualTo(1);
+        User user = userMapper.selectById(2);
+        assertThat(user.getAge()).isEqualTo(3);
+        assertThat(user.getName()).isEqualTo("mp");
+
+        userMapper.update(
+                new User().setEmail("test@test.com"),
+                new QueryWrapper<User>()
+                .lambda().eq(User::getId,2)
+        );
 
     }
-
+//queryWithMap,QueryWithSQL,QueryWithPlaceHolder
+    //how to do join different tables
+    //how to deal with sp
 }

@@ -1,5 +1,6 @@
 package io.qkits.bootatisplus.demo.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -10,4 +11,7 @@ public class User {
     private String name;
     private Integer age;
     private String email;
+
+    @TableField(exist = false)
+    private Integer count;
 }
