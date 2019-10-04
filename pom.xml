@@ -15,7 +15,6 @@
         <module>redis-demos</module>
         <module>jobs-demo</module>
         <module>datasources</module>
-        <module>starter-demos</module>
         <module>spring-internal</module>
         <module>kotlin-demos</module>
         <module>spring-micorservices</module>

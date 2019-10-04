@@ -49,6 +49,11 @@
             <artifactId>p6spy</artifactId>
             <version>3.8.5</version>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-generator</artifactId>
+            <version>3.1.1</version>
+        </dependency>
     </dependencies>
 
 
