@@ -23,6 +23,7 @@
         <!--<module>qboot</module>-->
         <module>boot-mybatis-plus-demo</module>
         <module>q-zk</module>
+        <module>elasticjob-demo</module>
 
     </modules>
     <parent>
