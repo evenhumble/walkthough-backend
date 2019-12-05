@@ -22,8 +22,9 @@
         <module>email-matters</module>
         <!--<module>qboot</module>-->
         <module>boot-mybatis-plus-demo</module>
-        <module>q-zk</module>
+<!--        <module>q-zk</module>-->
         <module>elasticjob-demo</module>
+        <module>templates-demo</module>
 
     </modules>
     <parent>

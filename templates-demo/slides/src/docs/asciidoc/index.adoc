@@ -1,0 +1,457 @@
+= Why Every Developer Needs A Template Engine
+2019-11-19
+:revnumber: {project-version}
+:example-caption!:
+:icons: font
+ifndef::imagesdir[:imagesdir: images]
+:customcss: customcss.css
+:experimental:
+:pdf-page-size: 9in x 6in
+:uri-project: https://github.com/sgoeschl/presentations
+
+[%notitle]
+== Introduction
+[.stretch]
+image::front-page.jpg[background,size=cover,pdfwidth=80%]
+
+<<<
+== Siegfried Goeschl
+* Senior Software Engineer
+* Writing server-side code
+* Java Meetup Vienna co-organizer
+* Apache Software Foundation member
+
+<<<
+[%notitle]
+== Currently Found At
+image::laptop-new-v3.png[background,size=cover,pdfwidth=80%]
+
+<<<
+== Those Boring Tasks I
+* Transform CSV to Markdown or HTML
+* Create test user overview from JSON
+* Consolidate dozen of property files into CSV
+* Transform Excel test report to Confluence markup
+* Filter AWS load balancer logs
+
+<<<
+== Those Boring Tasks II
+* Textual output based on various input formats
+* Too complex for shell scripting?
+* Too simple for a custom application?
+* Beyond shell scripting, e.g. Python, Groovy?
+* Still a lot of legwork
+
+<<<
+[%notitle]
+== The Lazy Developer
+[.stretch]
+image::lazyness.jpg[background,size=cover,pdfwidth=80%]
+
+== Once Upon A Time
+* Regular updates of test users & their products
+* QA team created an Excel document manually
+* Wanted to make QA happy (at least once)
+* Groovy & Velocity to create HTML & Markdown
+
+[.notes]
+****
+* My first serious encounter with Groovy in 12/2015
+****
+
+<<<
+[%notitle]
+== Being Lazy Requires Work
+[.stretch]
+image::code-coding-computer-data-574071-small.jpg[background,size=cover,pdfwidth=80%]
+
+<<<
+== Being Lazy Requires Work
+* Added more and more features
+* Switched from Apache Velocity to FreeMarker
+* Migrated from Groovy to JDK 1.8+
+* Migrated from Commons CLI to https://github.com/remkop/picocli[picocli]
+* Finally wrote unit tests
+
+[.notes]
+****
+* No Velocity release for many years
+* The handy Velocity Tool pulled in tons of dependencies
+* Velocity support deprecated in Spring 4.3
+****
+
+<<<
+== About Apache FreeMarker
+* FreeMarker 1 was released 2004
+* FreeMarker 2 was mostly stable Q3/2004
+* Moved to Apache Software Foundation in 2015
+* Latest 2.x release is 2.3.29 (2019-08-17)
+* Ongoing work on FreeMarker 3.x
+
+<<<
+== About Apache FreeMarker
+* Can generate any kind of text
+* Easily embeddable (no servlet environment)
+* Pluggable template loader
+* Powerful template language
+* Zero dependencies
+
+<<<
+[%notitle]
+== FreeMarker CLI
+[.stretch]
+image::freemarker-cli.png[size=center,pdfwidth=80%]
+
+<<<
+== FreeMarker CLI
+* Using Apache FreeMarker template engine
+* Command-line tool which Unix look & feel
+* Multiple input files / input directories
+* Parses text, CSV, Excel, HTML, JSON, Properties, YAML & XML files
+* Creates single output file or write to `stdout`
+
+<<<
+[%notitle]
+== FreeMarker CLI
+[.stretch]
+image::freemarker-cli-help.png[size=center,pdfwidth=80%]
+
+<<<
+== What Can You Do With It?
+[%notitle]
+== Magic?!
+[.stretch]
+image::adult-bed-bedroom-1282293.jpg[background,size=cover,pdfwidth=80%]
+
+<<<
+== True Story 1/1
+* Existing CSV, Excel & JSON transaction export
+* Evaluate performance of PDF transaction export
+* Answer appreciated tomorrow
+* But there is no PDF export ...
+* How to prototype PDF transaction export quickly?
+
+<<<
+== True Story 1/2
+* Fetch OAuth2 token
+* Download CSV transaction history over REST API
+* Parse the CSV using https://commons.apache.org/proper/commons-csv[Apache Commons CSV]
+* Two options to transform CSV to PDF
+  ** From HTML to PDF using https://wkhtmltopdf.org[wkhtml2pdf]
+  ** From XML-FO to PDF using https://xmlgraphics.apache.org/fop[Apache FOP]
+
+<<<
+== True Story 1/3
+```
+> freemarker-cli -e UTF-16 \
+    -t templates/csv/fo/transactions.ftl \
+    $FILENAME.csv > $FILENAME.fo
+
+> fop -fo $FILENAME.fo $FILENAME-fop.pdf
+
+######################################################################
+CSV -> HTML -> PDF Transaction Export
+######################################################################
+Fetching the access token took 1 seconds
+CSV export of 4234 transactions took 5 seconds
+Transforming CSV to HTML took 5 seconds
+Converting HTML to PDF took 16 seconds
+```
+<<<
+[%notitle]
+== True Story 1/4
+[.stretch]
+image::transaction-export-fop.png[size=cover,pdfwidth=80%]
+
+<<<
+== True Story 1/5
+```
+> freemarker-cli -e UTF-16 \
+    -t templates/csv/html/transactions.ftl \
+    $FILENAME.csv > $FILENAME.html
+
+> wkhtmltopdf -O landscape $FILENAME.html \
+    $FILENAME-wkhtmltopdf.pdf
+
+######################################################################
+CSV -> FO -> PDF Transaction Export
+######################################################################
+Fetching the access token took 0 seconds
+CSV export of 4234 transactions took 4 seconds
+Transforming CSV to XML-FO took 5 seconds
+Converting XML-FO to PDF took 10 seconds
+```
+
+<<<
+[%notitle]
+== True Story 1/6
+[.stretch]
+image::transaction-export-wkhtmltopdf.png[size=cover,pdfwidth=80%]
+
+<<<
+== True Story 1/7
+* https://github.com/sgoeschl/freemarker-cli/blob/master/templates/csv/fo/transactions.ftl[FreeMarker Template FO^]
+* https://github.com/sgoeschl/freemarker-cli/blob/master/templates/csv/html/transactions.ftl[FreeMarker Template HTML^]
+
+<<<
+== True Story 2/1
+* Security team requires firewall white-listing of all REST endpoints
+* Provide the available REST endpoints & HTTP methods as CSV file
+* Need to be updated for regularly
+
+<<<
+== True Story 2/2
+* REST Endpoints are documented with Swagger
+* Endpoint documentation as JSON document
+* Use https://github.com/json-path/JsonPath[JsonPath^] to parse JSON
+* Write out the CSV
+
+<<<
+== True Story 2/3
+```
+freemarker-cli
+  -t templates/json/csv/swagger-endpoints.ftl
+  site/sample/json/swagger-spec.json
+```
+
+<<<
+[%notitle]
+== True Story 2/4
+[format="csv", options="header", separator=";"]
+|===
+ENDPOINT;METHOD;DESCRIPTION
+/api/pets;GET;Returns all pets
+/api/pets;POST;Creates a new pet
+/api/pets/{id};GET;Returns a user
+/api/pets/{id};DELETE;Deletes a single pet
+|===
+
+<<<
+== True Story 2/5
+* https://github.com/sgoeschl/freemarker-cli/blob/master/site/sample/json/swagger-spec.json[Swagger JSON^]
+* https://github.com/sgoeschl/freemarker-cli/blob/master/templates/json/csv/swagger-endpoints.ftl[FreeMarker Template^]
+
+<<<
+== Being Even More Lazy
+* Generate test data for performance tests
+* Transform Excel test report to Confluence markup
+* Transform Excel document to CSV configuration file
+* Transform HTML markup to CSV
+
+<<<
+== Everything Was Good For A While
+
+<<<
+[%notitle]
+== Microservices
+[.stretch]
+image::microservices.png[size=center,pdfwidth=%]
+
+<<<
+== The Problem
+* Wrote some internal stuff
+* Target audience Product Management & Operations
+* Decent Web UI would be nice to have
+* No Javascript, Node.js and ecosystem
+
+<<<
+== Microservice Frameworks
+* http://spring.io/projects/spring-boot[Spring Boot]
+  ** FreeMarker, Thymleaf
+  ** Velocity support was deprecated in Spring 4.3
+* http://micronaut.io[Micronaut]
+  ** Velocity initially
+  ** FreeMarker, Handlebar, Soy, Thymeleaf
+
+[.notes]
+****
+* Micronaut is developed by OCI which also develop Grails, was released in October 2018
+* Soy, also known as Closure Templates, a template compiler from Google.
+****
+
+<<<
+== Spring Boot & FreeMarker
+
+<<<
+== What You Need To Do
+* Add FreeMarker dependency
+* Implement a Spring Controller
+* Write FreeMarker templates
+
+<<<
+== Maven POM
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-freemarker</artifactId>
+</dependency>
+```
+
+<<<
+== Spring View Controller
+```java
+@Controller
+public class ViewController {
+
+  @GetMapping("/ui/users")
+  public String doSomething(Map<String, Object> model,
+          @RequestParam(name = "tenant") String tenant,
+          @RequestParam(name = "site") String site,
+          @RequestParam(name = "user") String user) {
+      model.put("users", findUsers(tenant, site, user));
+      return "users";
+    }
+```
+
+<<<
+== FreeMarker Template
+```html
+<#ftl output_format="HTML" strip_whitespace=true>
+
+<#list users as user>
+    <tr>
+        <td>${user?counter}</td>
+        <td>${user.tenant}</td>
+        <td>${user.site}</td>
+        <td><@writeUserStatus user/></td>
+        <td>${user.name}</td>
+        <td>${user.description}</td>
+    </tr>
+</#list>
+```
+
+[.notes]
+****
+* `user?counter` returns the current iteration index
+* `@writeUserStatus` invokes a macro
+****
+
+<<<
+== FreeMarker Macro
+```html
+<#macro writeUserStatus user>
+    <#if user.enabled>
+        <span class="badge badge-success">Working</span>
+    <#else>
+        <span class="badge badge-light">Unknown</span>
+    </#if>
+</#macro>
+```
+
+<<<
+== FreeMarker Layouts I
+```html
+<#!-- layout/bootstrap-layout.ftl -->
+
+<#macro page>
+    <html lang="en" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://m.b.com/b/4.1.3/css/bootstrap.min.css">
+    </head>
+    <body>
+      <#include "menu.ftl"/>
+      <div class="container-fluid"><#nested/></div>
+    </body>
+    </html>
+</#macro>
+```
+
+<<<
+== FreeMarker Layouts II
+```html
+<#import "layout/bootstrap-layout.ftl" as layout>
+
+<@layout.page>
+    <h2>Spring Boot FreeMarker Demo</h2>
+    <p>Production-ready Spring Boot FreeMarker sample</p>
+    <ul>
+        <li>Auto-reloading of FreeMarker templates</li>
+        <li>Integration of Bootstrap 4</li>
+        <li>Application icon and favicon</li>
+        <li>Built-in error handling</li>
+    </ul>
+</@layout.page>
+```
+
+<<<
+[%notitle]
+== Spring Boot FreeMarker
+[.stretch]
+image::spring-freemarker-demo.png[size=center,pdfwidth=%]
+
+<<<
+== FreeMarker Tips & Tricks
+
+<<<
+== FreeMarker Directives
+[source]
+----
+${propertyName.fieldName??} #<1>
+${propertyName.optionalProperty!"Default Value"} #<2>
+
+<#list map as name,value> #<3>
+  ${name} : ${value}
+</#list>
+----
+<1> Does the field exists?
+<2> Return a default value
+<3> Iterate over name/value pairs
+
+<<<
+== Template Auto Reloading
+[source]
+----
+spring.freemarker.cache=false # <1>
+spring.freemarker.prefer-file-system-access=true
+spring.freemarker.template-loader-path=file:./templates # <2>
+----
+<1> Disbale FTL caching
+<2> Use the FTLs from `src/main/resources/templates`
+
+<<<
+== Why Every Developer Needs A Template Engine?!
+
+<<<
+== Get Rid Of Boring Tasks
+* Ad-hoc file transformations
+* Simple Web UI
+* Email generation
+
+<<<
+[%notitle]
+== Belongs To Your Tool Chest
+[.stretch]
+image::assortment-black-and-white-black-and-white-220639.jpg[size=cover,pdfwidth=80%]
+
+<<<
+== Why choosing FreeMarker?
+* General purpose template engine
+  ** Not only HTML output
+* IntelliJ integration
+* Wide-spread commercial usage
+  ** Alfresco, Liferay, Magnolia, Netbeans
+
+<<<
+== Why choosing FreeMarker?
+* Apache Software Licence
+* Mature & actively maintained
+* Extensive documentation
+* Helpful error messages
+* Zero dependencies
+
+<<<
+[%notitle]
+== Questions?
+image::ask-blackboard-356079.jpg[background,size=cover,pdfwidth=80%]
+
+<<<
+== References
+* https://github.com/sgoeschl/freemarker-cli[FreeMarker CLI^]
+* https://github.com/sgoeschl/presentations/blob/master/javameetup/freemarker/slides/src/docs/asciidoc/index.adoc[Spring Boot FreeMarker Presentation^]
+* https://github.com/sgoeschl/presentations/tree/master/javameetup/freemarker/demo[Spring Boot FreeMarker Demo^]
+* https://freemarker.apache.org/index.html[Apache FreeMarker^]
+* https://docs.spring.io/spring/docs/5.1.7.RELEASE/spring-framework-reference/web.html#mvc-view-freemarker[Spring FreeMarker Integration]
+* https://o7planning.org/en/11547/spring-boot-and-freemarker-tutorial#a10847966[Spring Boot FreeMarker Tutorial^]
+* http://www.vogella.com/tutorials/FreeMarker/article.html[Using FreeMarker Templates Tutorial^]

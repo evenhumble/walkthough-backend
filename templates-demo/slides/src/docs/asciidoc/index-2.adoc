@@ -1,0 +1,314 @@
+= Kickstart Your Gatling Performance Testing
+Siegfried Goeschl <siegfried.goeschl@willhaben.at>
+2018-03-01
+:revnumber: {project-version}
+:example-caption!:
+:icons: font
+ifndef::imagesdir[:imagesdir: images]
+:customcss: customcss.css
+:experimental:
+:pdf-page-size: 9in x 6in
+
+[%notitle]
+== Introduction
+image::gatling-logo.png[size=center]
+
+<<<
+== Kick-start Gatling
+* Want to use Gatling for performance testing?
+* Want to use your IDE to write Scala code?
+* Want to run Gatling tests on your CI server?
+* Want to know more about (some) advanced features?
+* Confused with Scala, DSL and documentation?
+
+<<<
+== About Gatling & Me
+* Software developer loving QA
+* Doing test automation for many years
+* Gatling as side project for George @ Erste Group
+* Using Gatling for internal projects @ Willhaben
+
+<<<
+== Welcome to Gatling
+* Open-source load and performance testing framework
+* Gatling tests are written in Scala
+* Your favorite IDE is the UI of choice
+* Software development skill required
+* Continuous Delivery & Continuous Deployment
+
+<<<
+== The Gatling Distribution
+* Gatling distribution aimed at throw-away tests
+* Gatling Recorder to capture a test script
+* Changes of Gatling scripts using a text editor
+* Gives you no IDE integration whatsoever
+
+<<<
+== Windows & Gatling Distribution
+[source]
+----
+./bin/gatling.sh -s computerdatabase.gatling.smoketest.Test
+----
+Windows - Java process not killed with `CTRL-C`
+
+<<<
+[%notitle]
+== This Sucks
+[.stretch]
+image::this-sucks.jpg[size=center,pdfwidth=80%]
+
+<<<
+== Gatling Meets Maven
+* Import your Gatling project into your IDE
+* Re-factoring Scala code is much more fun with an IDE
+* You can still execute Gatling tests on the command line
+* Maven simplifies Continuous Delivery & Continuous Deployment
+
+<<<
+[%notitle]
+== Too Good To Be True
+image::too-good-to-be-true.jpg[background,size=cover,pdfwidth=80%]
+
+<<<
+[%notitle]
+== GitHub Kickstart Gatling Project
+https://github.com/sgoeschl/presentations/tree/master/agiletestautomation
+
+<<<
+== Software Requirements
+* IntelliJ Community Edition 2017.2
+* IntelliJ Scala Plugin 2017.2.13
+* Using scala-sdk-2.12.3
+* Apache Maven 3.2.3 & JDK 1.8
+
+<<<
+[%notitle]
+== IntelliJ & Gatling
+[.stretch]
+image::intellig-gatling-screenshot.png[size=center,pdfwidth=80%]
+
+<<<
+== Gatling Run Configuration
+[width="100%",cols="30,70",options="header"]
+|============================================================================
+|Parameter              |Value
+|Main Class             |Engine
+|VM Options             |-Dgatling.core.simulationClass=XXX
+|============================================================================
+
+<<<
+[%notitle]
+== Gatling Run Configuration
+[.stretch]
+image::intellij-gatling-configuration.png[size=center,pdfwidth=80%]
+
+<<<
+[%notitle]
+== Execute Gatling in IntelliJ
+[.stretch]
+image::intellij-running-gatling.png[size=center,pdfwidth=80%]
+
+<<<
+[%notitle]
+== First Gatling Test Report
+[.stretch]
+image::intellij-gatling-report.png[size=center,pdfwidth=80%]
+
+<<<
+== Gatling Advanced Tutorial
+* Step 01: Isolate processes
+* Step 02: Configure virtual users
+* Step 03: Use dynamic data with Feeders and Checks
+* Step 04: Looping
+* Step 05: Check and failure management
+
+<<<
+== Running Gatling Advanced Tutorial
+* Provided in GitHub Kickstart Gatling project
+* `computerdatabase.advanced.*`
+
+<<<
+== Gatling & CI Server
+* Put Gatling tests into separate Maven module
+* Execute performance test scenario using Maven
+* Uses `-Dgatling.simulationClass` system property
+
+<<<
+== Maven Command Line
+```
+mvn -Dgatling.simulationClass=XXX clean gatling:test
+```
+
+<<<
+== Hard-coded Configuration?!
+
+<<<
+== Hard-coded Server Address
+[source,scala]
+----
+val httpConf = http
+    .baseURL("http://computer-database.gatling.io") // <1>
+    .acceptHeader("text/html,application/xhtml+xml,application/xml")
+    .doNotTrackHeader("1")
+    .acceptLanguageHeader("en-US,en;q=0.5")
+    .acceptEncodingHeader("gzip, deflate")
+    .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0)")
+----
+<1> Supporting staging environments?
+
+<<<
+== Hard-coded CSV Files
+[source,scala]
+----
+val feeder = csv("search.csv").random // <1>
+----
+<1> Need different CSV file for testing?
+
+<<<
+== Hard-coded Injection Profile
+[source,scala]
+----
+setUp(
+  users.inject(rampUsers(10) over (10 seconds)), // <1>
+  admins.inject(rampUsers(2) over (10 seconds))
+).protocols(httpConf)
+----
+<1> Different load for staging environments?
+
+<<<
+== How To Pass All That Settings
+* Pass system properties
+* Define Maven profiles
+* Use Gatling Blueprint Extensions
+
+<<<
+== Gatling Blueprint Extensions
+* https://github.com/sgoeschl/gatling-blueprint-extensions
+* Introduces `SimulationCoordinates`
+* Hierarchical `environment.properties`
+* Hierarchical file resolver, e.g. `user.csv`
+
+<<<
+== Having A Closer Look
+* https://github.com/sgoeschl/gatling-blueprint-extensions/blob/master/src/main/java/org/github/sgoeschl/gatling/blueprint/extensions/SimulationCoordinates.java[Simulation Coordinates]
+* https://github.com/sgoeschl/presentations/blob/master/agiletestautomation/kickstartgatling/example/src/test/scala/computerdatabase/gatling/functional/Test.scala[Functional Gatling Test Using Blueprint Extensions]
+
+<<<
+== User Injection Profiles
+* Defines how many users started when
+* Gatling supports *Open Models*
+    ** New users started no matter how many users are already there
+    ** Models reality and brings down your server
+
+<<<
+== At Once User
+[source,scala]
+----
+setUp(
+  scn.inject(
+    atOnceUsers(10) // <1>
+  ).protocols(httpConf)
+)
+----
+<1> Injects a given number of users at once
+
+<<<
+== Rampup Users
+[source,scala]
+----
+setUp(
+  scn.inject(
+    rampUsers(10) over(5 seconds) // <1>
+  ).protocols(httpConf)
+)
+----
+<1> Start 10 user within 5 seconds => 10 users
+
+<<<
+== Constant Users
+[source,scala]
+----
+setUp(
+  scn.inject(
+    constantUsersPerSec(20) during(15 seconds) // <1>
+  ).protocols(httpConf)
+)
+----
+<1> Start 20 users / second for 15 seconds => 300 users
+
+<<<
+== Heaviside Users
+[source,scala]
+----
+setUp(
+  scn.inject(
+    heavisideUsers(1000) over(20 seconds) // <1>
+  ).protocols(httpConf)
+)
+----
+<1> Create 1.000 users in 20 seconds using https://en.wikipedia.org/wiki/Heaviside_step_function[Heaviside step function]
+
+<<<
+== Let The User Wait
+
+<<<
+== Pausing & Throttling
+[width="100%",cols="20,80",options="header"]
+|============================================================================
+|Approach               |Methods
+|Pausing                |`constantPauses`, `normalPausesWithStdDevDuration`
+|Throttling             |`reachRps`, `jumpToRps`, `holdFor`
+|============================================================================
+
+<<<
+== Assert Global Statistics
+* Response time
+* Number of failed requests
+* Requests per second
+
+<<<
+== Asserting Response Time
+[source,scala]
+----
+// Max response time of all requests is less than 100 ms
+setUp(scn).assertions(global.responseTime.max.lt(100))
+
+// Every request has no more than 5% of failing requests
+setUp(scn).assertions(forAll.failedRequests.percent.lte(5))
+
+// Percentage of failed requests named "Index" in the group "Search" is 0 %
+setUp(scn).assertions(details("Search" / "Index").failedRequests.percent.is(0))
+
+// Rate of requests per seconds for the group "Search"
+setUp(scn).assertions(details("Search").requestsPerSec.between(100, 1000))
+----
+
+<<<
+== Confused About Gatling & Scala?
+* Steep learning curve
+* Development know-how required
+* You need to know Scala, Gatling, IDE, build tool
+
+<<<
+== Gatling Resources 01
+* https://automationrhapsody.com/performance-testing-with-gatling/
+* https://theperformanceengineer.com/tag/gatling/
+* https://groups.google.com/forum/#!forum/gatling
+* https://gatling.io/docs/2.3/extensions/maven_plugin/
+
+<<<
+== Gatling Resources 02
+* https://github.com/sgoeschl/gatling-blueprint-project
+* https://github.com/sgoeschl/gatling-blueprint-extensions
+* https://www.blazemeter.com/blog/how-to-set-up-a-gatling-tests-implementation-environment
+* https://www.blazemeter.com/blog/how-to-set-up-and-run-your-gatling-tests-with-eclipse
+
+<<<
+== About Me
+* Independent Contractor & Consultant
+* Currently working at Willhaben
+* Doing Open Source development
+* Apache Software Foundation Member
+* Organizing Java Meetup & Devfest Vienna
+
+
