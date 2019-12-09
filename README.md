@@ -18,4 +18,8 @@ Go through different spring boot features
 
 ## Spring Boot Send Email
 
-- Email Sender
+- [X] Email Sender
+- [] Dubbo Demo
+- [] Job Samples
+- [X] File Server
+
