@@ -25,6 +25,7 @@
 <!--        <module>q-zk</module>-->
         <module>elasticjob-demo</module>
         <module>templates-demo</module>
+        <module>modules.xmljson</module>
 
     </modules>
     <parent>
