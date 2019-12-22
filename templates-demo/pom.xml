@@ -20,7 +20,7 @@
         <module>core</module>
         <module>app</module>
         <module>docs</module>
-        <module>slides</module>
+<!--        <module>slides</module>-->
         <module>gatling-demo</module>
     </modules>
 </project>

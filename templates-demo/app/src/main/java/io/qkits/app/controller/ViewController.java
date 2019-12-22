@@ -16,10 +16,6 @@
  */
 package io.qkits.app.controller;
 
-import com.github.sgoeschl.freemarker.demo.app.form.UserForm;
-import com.github.sgoeschl.freemarker.sample.model.User;
-import com.github.sgoeschl.freemarker.sample.service.RestService;
-import com.github.sgoeschl.freemarker.sample.util.Pair;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +33,11 @@ import java.util.Map;
 
 import static java.lang.String.format;
 import static org.springframework.http.HttpMethod.GET;
+
+import io.qkits.app.form.UserForm;
+import io.qkits.core.model.User;
+import io.qkits.core.service.RestService;
+import io.qkits.core.util.Pair;
 
 @Controller
 public class ViewController {
