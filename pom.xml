@@ -26,6 +26,7 @@
         <module>elasticjob-demo</module>
         <module>templates-demo</module>
         <module>modules.xmljson</module>
+        <module>lcd</module>
 
     </modules>
     <parent>
