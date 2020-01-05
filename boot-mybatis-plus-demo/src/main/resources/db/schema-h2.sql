@@ -8,3 +8,11 @@ CREATE TABLE user
 	email VARCHAR(50) NULL DEFAULT NULL COMMENT '邮箱',
 	PRIMARY KEY (id)
 );
+
+create Table project {
+    id BIGINT(20) NOT NULL COMMENT '主键ID',
+    project_name VARCHAR(30) NULL DEFAULT NULL COMMENT 'project name',
+    project_summary VARCHAR(300) NULL DEFAULT NULL COMMENT 'project summary',
+    parentId BIGINT(20) NOT NULL COMMENT '主键ID',
+    PRIMARY KEY (id)
+}

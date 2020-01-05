@@ -1,4 +1,4 @@
-package io.qkits.bootatisplus.demo.entity;
+package io.qkits.bootatisplus.demo.user.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 

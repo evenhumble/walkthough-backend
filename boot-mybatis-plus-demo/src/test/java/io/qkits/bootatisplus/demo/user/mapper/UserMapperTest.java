@@ -1,8 +1,8 @@
-package io.qkits.bootatisplus.demo.mapper;
+package io.qkits.bootatisplus.demo.user.mapper;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import io.qkits.bootatisplus.demo.entity.User;
+import io.qkits.bootatisplus.demo.user.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;

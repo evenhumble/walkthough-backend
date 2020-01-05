@@ -6,6 +6,12 @@ spring:
     url: jdbc:p6spy:h2:mem:test
     username: root
     password: test
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: assign_id
+      capital-mode: true
 logging:
   level:
     io.qkits: debug
+    com.baomidou.samples.metainfo: debug
