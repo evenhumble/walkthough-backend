@@ -1,4 +1,4 @@
-//package io.qkits.bootatisplus.demo.generator;
+//package io.qkits.bootatisplus.demo.base.generator;
 //
 //import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 //import com.baomidou.mybatisplus.core.toolkit.StringPool;

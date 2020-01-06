@@ -3,9 +3,10 @@ package io.qkits.bootatisplus.demo.activerecord;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import javax.annotation.Resource;
 
 import io.qkits.bootatisplus.demo.project.entity.Project;
 import io.qkits.bootatisplus.demo.project.mapper.ProjectMapper;
@@ -18,7 +19,7 @@ import io.qkits.bootatisplus.demo.project.mapper.ProjectMapper;
 @RunWith(SpringRunner.class)
 public class ProjectMapperTest {
 
-  @Autowired
+  @Resource
   private ProjectMapper pm;
 
   @Test

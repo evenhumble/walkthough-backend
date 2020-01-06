@@ -7,9 +7,9 @@ INSERT INTO user (id, name, age, email) VALUES
 (4, 'Sandy', 21, 'test4@baomidou.com'),
 (5, 'Billie', 24, 'test5@baomidou.com');
 
-
-insert into project(id,project_name,project_summary) values
-(1,"p1","project p1",null),
-(2,"p2","project p2",null),
-(3,"p3","project p3",null),
-(4,"p4","project p4",2)
+delete from project;
+insert into project(id,project_name,project_summary,parent_id) values
+(1,'p1','project p1',null),
+(2,'p2','project p2',null),
+(3,'p3','project p3',null),
+(4,'p4','project p4',2);

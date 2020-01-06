@@ -1,4 +1,4 @@
-package io.qkits.bootatisplus.demo.mapperhandler;
+package io.qkits.bootatisplus.demo.base.mapperhandler;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 

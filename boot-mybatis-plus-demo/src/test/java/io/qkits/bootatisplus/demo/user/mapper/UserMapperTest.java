@@ -91,6 +91,14 @@ public class UserMapperTest {
         );
 
     }
+    @Test
+    public void dynamicTest() {
+        // 自己去观察打印 SQL 目前随机访问 user_2018  user_2019 表
+        for (int i = 0; i < 6; i++) {
+            User user = userMapper.selectById(1);
+            System.err.println(user.getName());
+        }
+    }
 //queryWithMap,QueryWithSQL,QueryWithPlaceHolder
     //how to do join different tables
     //how to deal with sp
