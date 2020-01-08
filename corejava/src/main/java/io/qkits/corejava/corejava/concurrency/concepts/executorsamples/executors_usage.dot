@@ -1,0 +1,29 @@
+digraph executors{
+    fontname="Consolas";
+    fontsize=10;
+
+    node [shape="Mrecord", fontname="Consolas", fontsize=10];
+    edge [color="#F1C40F", fontname="Consolas", fontsize=10];
+
+    node [style="filled", color="limegreen"];
+
+    /*subgraph ExecutorService {
+      style="filled";
+      color="lightgrey";
+      node [style="filled", color="chocolate"];
+      ThreadPoolExecutor;
+      ScheduledThreadPoolExecutor;
+    }*/
+    executeService[ label = "{ExecutorService|+ ThreadPoolExecutor\l
+      + ScheduledThreadPoolExecutor\l }" ];
+    main_thread -> Runnable [label="create"];
+    main_thread -> Callable [label="create"];
+    main_thread -> Future [label="get"];
+    main_thread -> FutureTask [label="cancel"];
+
+    Runnable -> executeService [lable="execute"];
+    Runnable -> executeService [lable="submit"];
+    Callable -> executeService [label="submit"];
+    executeService -> FutureTask [label="return"];
+
+}

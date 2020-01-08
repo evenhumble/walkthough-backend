@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+    <actions/>
+    <description>_DESCRIPTION</description>
+    <keepDependencies>false</keepDependencies>
+    <properties>
+        <jenkins.model.BuildDiscarderProperty>
+            <strategy class="hudson.tasks.LogRotator">
+                <daysToKeep>-1</daysToKeep>
+                <numToKeep>10</numToKeep>
+                <artifactDaysToKeep>-1</artifactDaysToKeep>
+                <artifactNumToKeep>1</artifactNumToKeep>
+            </strategy>
+        </jenkins.model.BuildDiscarderProperty>
+        <hudson.model.ParametersDefinitionProperty>
+            <parameterDefinitions>
+                <hudson.model.ChoiceParameterDefinition>
+                    <name>envName</name>
+                    <description>测试环境配置</description>
+                    <choices class="java.util.Arrays$ArrayList">
+                        <a class="string-array">
+                            <string>Integration</string>
+                            <string>ME</string>
+                            <string>TEST</string>
+                            <string>Prod</string>
+                        </a>
+                    </choices>
+                </hudson.model.ChoiceParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>svn_url</name>
+                    <description>svn path</description>
+                    <defaultValue>_SVNPATH</defaultValue>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>test_type</name>
+                    <description>ui or api testing</description>
+                    <defaultValue>_TESTTYPE</defaultValue>
+                </hudson.model.StringParameterDefinition>
+                <hudson.model.StringParameterDefinition>
+                    <name>user</name>
+                    <description>emails to send</description>
+                    <defaultValue>_USER</defaultValue>
+                </hudson.model.StringParameterDefinition>
+            </parameterDefinitions>
+        </hudson.model.ParametersDefinitionProperty>
+    </properties>
+    <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.5.7">
+        <locations>
+            <hudson.scm.SubversionSCM_-ModuleLocation>
+                <remote>${svn_url}</remote>
+                <credentialsId>41daff08-7c5e-41d9-9702-10605091e182</credentialsId>
+                <local>.</local>
+                <depthOption>infinity</depthOption>
+                <ignoreExternalsOption>true</ignoreExternalsOption>
+            </hudson.scm.SubversionSCM_-ModuleLocation>
+        </locations>
+        <excludedRegions></excludedRegions>
+        <includedRegions></includedRegions>
+        <excludedUsers></excludedUsers>
+        <excludedRevprop></excludedRevprop>
+        <excludedCommitMessages></excludedCommitMessages>
+        <workspaceUpdater class="hudson.scm.subversion.CheckoutUpdater"/>
+        <ignoreDirPropChanges>false</ignoreDirPropChanges>
+        <filterChangelog>false</filterChangelog>
+    </scm>
+    <assignedNode>AutoTestSlave</assignedNode>
+    <canRoam>false</canRoam>
+    <disabled>false</disabled>
+    <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+    <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+    <jdk>jdk1.8.0_51</jdk>
+    <triggers/>
+    <concurrentBuild>false</concurrentBuild>
+    <builders>
+        <hudson.tasks.Maven>
+            <targets>clean
+                test  -P${test_type}</targets>
+            <mavenName>apache-maven-3.3.1</mavenName>
+            <pom>pom.xml</pom>
+            <usePrivateRepository>false</usePrivateRepository>
+            <settings class="jenkins.mvn.DefaultSettingsProvider"/>
+            <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
+        </hudson.tasks.Maven>
+    </builders>
+    <publishers>
+        <com.nsn.ci.TrendView.TrendReportPublisher plugin="TrendView@1.0-SNAPSHOT">
+            <dataFile>data.xml</dataFile>
+            <fromDir></fromDir>
+            <rptTitle>Test Result Trend</rptTitle>
+            <chartWidth>500</chartWidth>
+            <chartHeight>240</chartHeight>
+            <curveStyle>false</curveStyle>
+            <width>500</width>
+            <height>240</height>
+        </com.nsn.ci.TrendView.TrendReportPublisher>
+        <htmlpublisher.HtmlPublisher plugin="htmlpublisher@1.11">
+            <reportTargets>
+                <htmlpublisher.HtmlPublisherTarget>
+                    <reportName>HTML Report</reportName>
+                    <reportDir>target/test-classes/simple-report/</reportDir>
+                    <reportFiles>testresult.html</reportFiles>
+                    <alwaysLinkToLastBuild>true</alwaysLinkToLastBuild>
+                    <keepAll>true</keepAll>
+                    <allowMissing>false</allowMissing>
+                </htmlpublisher.HtmlPublisherTarget>
+            </reportTargets>
+        </htmlpublisher.HtmlPublisher>
+        <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.41.3">
+            <recipientList>${user}</recipientList>
+            <configuredTriggers>
+                <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+                    <email>
+                        <recipientList></recipientList>
+                        <subject>$PROJECT_DEFAULT_SUBJECT</subject>
+                        <body>$PROJECT_DEFAULT_CONTENT</body>
+                        <recipientProviders>
+                            <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+                        </recipientProviders>
+                        <attachmentsPattern></attachmentsPattern>
+                        <attachBuildLog>false</attachBuildLog>
+                        <compressBuildLog>false</compressBuildLog>
+                        <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+                        <contentType>project</contentType>
+                    </email>
+                </hudson.plugins.emailext.plugins.trigger.FailureTrigger>
+            </configuredTriggers>
+            <contentType>default</contentType>
+            <defaultSubject>$DEFAULT_SUBJECT</defaultSubject>
+            <defaultContent>$DEFAULT_CONTENT</defaultContent>
+            <attachmentsPattern></attachmentsPattern>
+            <presendScript>$DEFAULT_PRESEND_SCRIPT</presendScript>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$DEFAULT_REPLYTO</replyTo>
+            <saveOutput>false</saveOutput>
+            <disabled>false</disabled>
+        </hudson.plugins.emailext.ExtendedEmailPublisher>
+    </publishers>
+    <buildWrappers/>
+</project>

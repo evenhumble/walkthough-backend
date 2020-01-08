@@ -26,6 +26,7 @@
         <module>templates-demo</module>
         <module>modules.xmljson</module>
         <module>toolsets</module>
+        <module>corejava</module>
 
     </modules>
     <parent>

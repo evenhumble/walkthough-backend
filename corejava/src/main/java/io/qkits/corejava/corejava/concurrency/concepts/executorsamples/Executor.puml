@@ -1,0 +1,25 @@
+@startuml
+
+interface Runnable
+interface Future<V>
+interface RunnableFuture
+interface Callable
+interface Executor
+interface ExecutorService
+interface ScheduledExecutorService
+class FutureTask
+class AbstractExecutorService
+class ThreadPoolExecutor
+class ScheduleThreadPoolExecutor
+
+Runnable <|-- RunnableFuture
+Future <|-- RunnableFuture
+RunnableFuture <|-- FutureTask
+
+ExecutorService <|-- AbstractExecutorService
+ExecutorService <|-- ScheduledExecutorService
+AbstractExecutorService <|-- ThreadPoolExecutor
+ThreadPoolExecutor <|-- ScheduleThreadPoolExecutor
+ScheduledExecutorService<|-- ScheduleThreadPoolExecutor
+
+@enduml

@@ -1,0 +1,10 @@
+services:
+  hostname: 192.168.99.100
+  container_name: jenkins-blueocean
+  image: jenkinsci/blueocean:latest
+  environment:
+    - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
+  volumes:
+    - ./jenkins_home:/var/jeknins_home
+  ports:
+    - "8080:8080"
