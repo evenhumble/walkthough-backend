@@ -1,4 +1,4 @@
-package io.hedwig.dh.spring.jobs.scheduledjobs;
+package io.qkits.jobs.simple.scheduledjobs;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
