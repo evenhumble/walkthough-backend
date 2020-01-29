@@ -69,11 +69,11 @@
 <!--            <artifactId>spring-boot-starter-amqp</artifactId>-->
 <!--            <version>${springboot.version}</version>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-dts</artifactId>
-            <version>${mybatisplus.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.baomidou</groupId>-->
+<!--            <artifactId>mybatis-plus-dts</artifactId>-->
+<!--            <version>${mybatisplus.version}</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>

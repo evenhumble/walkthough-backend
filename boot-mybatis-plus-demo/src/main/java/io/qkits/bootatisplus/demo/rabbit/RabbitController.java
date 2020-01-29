@@ -13,8 +13,6 @@
 ///**
 // * rabbit 分布式事务消息测试
 // *
-// * @author jobob
-// * @since 2019-04-21
 // */
 //@RestController
 //@RequestMapping("/rabbit")

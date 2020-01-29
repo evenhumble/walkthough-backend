@@ -6,7 +6,25 @@ spring:
     url: jdbc:p6spy:h2:mem:test
     username: root
     password: test
+#  rabbitmq:
+#    host: 你的 IP
+#    port: 5672
+#    username: 用户
+#    password: 密码
+#    listener:
+#      simple:
+#        retry:
+#          enabled: true
+#          initial-interval: 1000
+#          # 最大尝试次数
+#          max-attempts: 3
+#          max-interval: 10000
+#          multiplier: 2.0
+#          stateless: true
 mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  configuration:
+    jdbc-type-for-null: 'null'
   global-config:
     db-config:
       id-type: assign_id
@@ -14,4 +32,6 @@ mybatis-plus:
 logging:
   level:
     io.qkits: debug
-    com.baomidou.samples.metainfo: debug
+    com.baomidou: debug
+
+

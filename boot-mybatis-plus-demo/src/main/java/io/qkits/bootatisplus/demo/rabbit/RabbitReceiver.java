@@ -10,9 +10,6 @@
 //
 ///**
 // * rabbit 消息接收器
-// *
-// * @author jobob
-// * @since 2019-04-21
 // */
 //@Component
 //public class RabbitReceiver implements IDtsListener {

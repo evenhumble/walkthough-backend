@@ -7,8 +7,8 @@ import org.apache.ibatis.annotations.Param;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
- * @author miemie
- * @since 2018-08-13
+ * todo: how to handler enum
+ * @param <T>
  */
 public interface MyBaseMapper<T> extends BaseMapper<T> {
 

@@ -1,6 +1,8 @@
 package io.qkits.bootatisplus.demo.user.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -14,4 +16,6 @@ public class User {
 
     @TableField(exist = false)
     private Integer count;
+    @Version
+    private Integer version;
 }
