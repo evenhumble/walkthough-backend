@@ -12,4 +12,8 @@ Build status on Travis CI:
 ## SpringBoot For Tester 
 
 - HelloWorld API and How to Test it? UT and Integration 
-- 
+
+
+## Mybatis-plus demo reference codes:
+
+- https://github.com/baomidou/mybatis-plus-samples.git
