@@ -27,6 +27,7 @@
         <module>modules.xmljson</module>
         <module>toolsets</module>
         <module>corejava</module>
+        <module>try.chart</module>
 
     </modules>
     <parent>
