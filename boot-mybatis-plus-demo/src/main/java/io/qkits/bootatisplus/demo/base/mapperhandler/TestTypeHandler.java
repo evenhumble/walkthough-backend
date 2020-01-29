@@ -11,8 +11,6 @@ import java.sql.SQLException;
 /**
  * 测试自定义 typeHandler
  *
- * @author miemie
- * @since 2018-08-13
  */
 public class TestTypeHandler extends BaseTypeHandler<String> {
 

@@ -4,11 +4,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import io.qkits.bootatisplus.demo.user.entity.User;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 
@@ -18,7 +16,6 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@RunWith(SpringRunner.class)
 @Slf4j
 @SpringBootTest
 public class UserMapperTest {
@@ -30,7 +27,7 @@ public class UserMapperTest {
     public void testGetOfBaseMapper(){
       log.info("start getting user information");
         List<User> users = userMapper.selectList(null);
-        Assert.assertEquals(users.size(),5);
+        Assertions.assertTrue(users.size()>2);
         users.forEach(user -> log.info(user.toString()));
     }
 
@@ -58,7 +55,7 @@ public class UserMapperTest {
     @Test
     public void hardDeleteOfBaseMapper(){
         log.info("hard delete .....");
-        int result = userMapper.deleteById(1L);
+        int result = userMapper.deleteById(5L);
         assertThat(result).isEqualTo(1);
     }
 
@@ -93,13 +90,9 @@ public class UserMapperTest {
     }
     @Test
     public void dynamicTest() {
-        // 自己去观察打印 SQL 目前随机访问 user_2018  user_2019 表
         for (int i = 0; i < 6; i++) {
-            User user = userMapper.selectById(1);
-            System.err.println(user.getName());
+            User user = userMapper.selectById(1L);
+            System.out.println(user.getName());
         }
     }
-//queryWithMap,QueryWithSQL,QueryWithPlaceHolder
-    //how to do join different tables
-    //how to deal with sp
 }

@@ -14,5 +14,6 @@ create Table project (
     project_name VARCHAR(30) NULL DEFAULT NULL COMMENT 'project name',
     project_summary VARCHAR(300) NULL DEFAULT NULL COMMENT 'project summary',
     parent_id BIGINT(20) COMMENT 'parent project/module ID',
+    CREATE_TIME timestamp COMMENT 'creation time',
     PRIMARY KEY (id)
 )
