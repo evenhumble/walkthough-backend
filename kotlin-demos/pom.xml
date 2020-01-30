@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>kotlin-springboot</module>
-        <module>kotlin-koans</module>
     </modules>
     <dependencyManagement>
         <dependencies>
