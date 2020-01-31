@@ -15,7 +15,6 @@ import java.util.TimerTask;
 
 /**
  * 每个新加入的请求，都会产生一个新的服务线程.此方法启动后，会向接入的对象推送数据
- * @author mengfeiyang
  *
  */
 public class MonitorService implements Runnable{

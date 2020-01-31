@@ -9,13 +9,12 @@ import java.util.TimerTask;
 
 /**
  * 监控文件改动，并返回改动的内容
- * @author mengfeiyang
  *
  */
 public class FileWatchAction {
 	private static FileWatchAction fileWatch = new FileWatchAction();
 	private HashMap<String,String> dataMap = new HashMap<String,String>();
-	private HashMap<String,Timer> monitObj = new HashMap<String,Timer>();
+	private HashMap<String,Timer> monitorObj = new HashMap<String,Timer>();
 	private FileWatchAction(){}
 	
 	public static FileWatchAction getInstance(){
@@ -36,7 +35,7 @@ public class FileWatchAction {
 	 * @return
 	 */
 	public int getMonitorLength(){
-		return monitObj.size();
+		return monitorObj.size();
 	}
 	
 	/**
@@ -44,22 +43,21 @@ public class FileWatchAction {
 	 * @param fileName
 	 */
 	public synchronized void stopMoniting(String fileName){
-		monitObj.get(fileName).cancel();
-		monitObj.remove(fileName);
+		monitorObj.get(fileName).cancel();
+		monitorObj.remove(fileName);
 		dataMap.remove(fileName);
 	}
 	
 	/**
 	 * 添加一个监控项目
 	 * @param fileName
-	 * @param encoding
 	 */
 	public synchronized void addMonitor(String fileName){
-		if(monitObj.get(fileName) == null){
+		if(monitorObj.get(fileName) == null){
 			WatchFileHandler watchDog = new WatchFileHandler(fileName);
 			Timer timer = new Timer();
 			timer.schedule(watchDog, 0, 500);
-			monitObj.put(fileName, timer);
+			monitorObj.put(fileName, timer);
 		}
 	}
 	
@@ -92,7 +90,6 @@ public class FileWatchAction {
 	            if(!str.equals("") && !str.equals("null")){
 	            	if(dataMap.get(fileName).length()>10000)dataMap.put(fileName,"");
 	            	dataMap.put(fileName, dataMap.get(fileName)+"\n"+new String(str.getBytes("ISO-8859-1"),"GBK"));
-	            	//System.out.println(new String(str.getBytes("ISO-8859-1"),"GBK"));
 	            }
 	            str = "";
 	            lastTimeFileSize = randomFile.length(); 

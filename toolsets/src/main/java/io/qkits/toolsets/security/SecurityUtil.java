@@ -13,12 +13,9 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.SecretKeySpec;
 
-import sun.misc.BASE64Encoder;
-
 /**
  * Base64,MD5,DES,AES加密算法
- * 
- * @author mengfeiyang
+ *
  *
  */
 @SuppressWarnings("restriction")

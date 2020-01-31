@@ -1,17 +1,13 @@
 package io.qkits.toolsets.telnet.telnetclient;
 
+
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.exec.OS;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.io.LineIterator;
 
 /**
  * 命令行执行工具,默认编码：UTF-8，可通过setEncoding方法来设置编码格式。<br>
  * 如：GBK,GB2312等.
- * @author mengfeiyang
- *
  */
 public class CommandExecutor {
 	private static String encoding = "UTF-8";
