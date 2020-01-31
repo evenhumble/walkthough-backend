@@ -16,13 +16,11 @@
         <module>datasources</module>
         <module>spring-internal</module>
         <module>kotlin-demos</module>
-        <module>spring-micorservices</module>
         <module>aop-collections</module>
         <module>email-matters</module>
         <!--<module>qboot</module>-->
         <module>boot-mybatis-plus-demo</module>
 <!--        <module>q-zk</module>-->
-        <module>elasticjob-demo</module>
         <module>templates-demo</module>
         <module>modules.xmljson</module>
         <module>toolsets</module>
