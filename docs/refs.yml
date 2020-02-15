@@ -1,0 +1,4 @@
+sites:
+  - https://github.com/allure-framework/allure2-model.git
+  - https://github.com/Blazemeter/apiritif.git
+  - https://github.com/pencil1/ApiTestManage.git
