@@ -1,9 +1,10 @@
 package io.qkits.toolsets.telnet.action;
 
 
+import io.qkits.toolsets.telnet.telnetclient.NetTelnet;
+
 /**
  * 对Socket服务作操作
- * @author mengfeiyang
  *
  */
 public class TelnetClient implements ITelnetClient{

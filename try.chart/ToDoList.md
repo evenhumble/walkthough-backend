@@ -7,7 +7,7 @@
 - data_lineage save
 - data_lineage delete
 
-## 2. Feature2: convert to Data Struture
+## 2. Feature2: convert to Data Structure
 
 - Level-1
 - Level-2
@@ -15,8 +15,8 @@
 
 ## 3. Feature3: API: Get DataLineage by Table name
 
-- Validata Table name
-- invalide table name
+- Validate Table name
+- invalid table name
 
 ## 4. Feature 4: Front-End Build up
 

@@ -13,3 +13,14 @@ insert into project(id,project_name,project_summary,parent_id) values
 (2,'p2','project p2',null),
 (3,'p3','project p3',null),
 (4,'p4','project p4',2);
+
+
+DELETE FROM big_user_2018;
+
+INSERT INTO big_user_2018 (id, name, age, email) VALUES
+(1, 'Jone', 18, 'test1@baomidou.com');
+
+DELETE FROM big_user_2019;
+
+INSERT INTO big_user_2019 (id, name, age, email) VALUES
+(1, 'Jack', 20, 'test2@baomidou.com');

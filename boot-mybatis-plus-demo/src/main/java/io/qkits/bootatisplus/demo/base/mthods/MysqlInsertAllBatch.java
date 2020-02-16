@@ -11,8 +11,6 @@ import com.baomidou.mybatisplus.core.metadata.TableInfo;
  * <p>
  * </p>
  *
- * @author yuxiaobin
- * @date 2019/6/14
  */
 public class MysqlInsertAllBatch extends AbstractMethod {
 

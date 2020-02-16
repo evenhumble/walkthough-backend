@@ -1,4 +1,4 @@
-package com.baomidou.mybatisplus.samples.deluxe.model;
+package io.qkits.bootatisplus.demo.base.page;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
@@ -10,9 +10,7 @@ import lombok.experimental.Accessors;
 /**
  * 自定义分页
  *
- * @author miemie
- * @since 2018-08-13
- */
+*/
 @Data
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)

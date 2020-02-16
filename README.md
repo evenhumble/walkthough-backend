@@ -7,19 +7,13 @@ Build status on Travis CI:
 [![CircleCI](https://circleci.com/gh/qdriven/walkthough-backend.svg?style=svg)](https://circleci.com/gh/evenhumble/dh-spring)
 [![Build Status](https://travis-ci.org/qdriven/walkthough-backend.svg?branch=master)](https://travis-ci.org/evenhumble/dh-spring)
 
-Spring Samples
+## Setup Github Actions
 
-- springboot.quickstart
+## SpringBoot For Tester 
+
+- HelloWorld API and How to Test it? UT and Integration 
 
 
-## SpringBoot Quick Start
+## Mybatis-plus demo reference codes:
 
-Go through different spring boot features
-
-## Spring Boot Send Email
-
-- [X] Email Sender
-- [] Dubbo Demo
-- [] Job Samples
-- [X] File Server
-
+- https://github.com/baomidou/mybatis-plus-samples.git

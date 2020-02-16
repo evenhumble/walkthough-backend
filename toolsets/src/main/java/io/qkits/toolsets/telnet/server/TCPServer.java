@@ -11,9 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * TCP聊天程序的客户端，负责为接入的会话生成独立线程。
- * 客户端telnet连接方式：telnet 127.0.0.1 8889
- * @author mengfeiyang
- *
+ * 客户端telnet连接方式：telnet 127.0.0.1 8889*
  */
 public class TCPServer {
 	private static List<NormalService> clientList = new ArrayList<NormalService>();

@@ -2,6 +2,7 @@ package io.qkits.toolsets.telnet.action;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,7 +12,6 @@ import cn.hutool.core.io.FileUtil;
 
 /**
  * 扫描文件，并根据关键词进行过滤
- * @author mengfeiyang
  *
  */
 public class FileScan {
@@ -22,25 +22,22 @@ public class FileScan {
 	 * @param rule 0表示会保留不包含关键词的条目，1表示会保留包含关键词的条目
 	 * @return
 	 */
+
 	public synchronized static List<String> getLinesByList(String fileName,String keyword,String rule){
-		List<String> klist = new ArrayList<String>();
-		try {
-			List<String> lines = FileUtil.readLines(new File(fileName));
-				if(rule.equals("0")){
-					for(String line : lines){
-						if(!line.contains(keyword)){
-							klist.add(line);
-						}
-					}
-				} else if(rule.equals("1")){
-					for(String line : lines){
-						if(line.contains(keyword)){
-							klist.add(line);
-						}
-					}
+		List<String> klist = new ArrayList<>();
+		List<String> lines = FileUtil.readLines(new File(fileName), Charset.defaultCharset());
+		if(rule.equals("0")){
+			for(String line : lines){
+				if(!line.contains(keyword)){
+					klist.add(line);
 				}
-		} catch (IOException e) {
-			e.printStackTrace();
+			}
+		} else if(rule.equals("1")){
+			for(String line : lines){
+				if(line.contains(keyword)){
+					klist.add(line);
+				}
+			}
 		}
 		return klist;
 	}

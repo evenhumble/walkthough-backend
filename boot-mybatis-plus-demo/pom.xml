@@ -37,6 +37,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${springboot.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
@@ -63,11 +69,11 @@
 <!--            <artifactId>spring-boot-starter-amqp</artifactId>-->
 <!--            <version>${springboot.version}</version>-->
 <!--        </dependency>-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-dts</artifactId>
-            <version>${mybatisplus.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.baomidou</groupId>-->
+<!--            <artifactId>mybatis-plus-dts</artifactId>-->
+<!--            <version>${mybatisplus.version}</version>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>

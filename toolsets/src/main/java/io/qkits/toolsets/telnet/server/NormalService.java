@@ -18,9 +18,7 @@ import org.phoenix.telnet.telnetclient.CommandExecutor;
 import com.google.common.io.Files;
 
 /**
- * 每个新加入的请求，都会产生一个新的服务线程
- * @author mengfeiyang
- *
+ * 每个新加入的请求，都会产生一个新的服务线程*
  */
 public class NormalService implements Runnable{
     private Socket s;

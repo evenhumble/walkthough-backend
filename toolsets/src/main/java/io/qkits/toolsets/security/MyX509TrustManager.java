@@ -9,9 +9,7 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 /**
- * java通过加载认证证书，抓取https的url源码方法
- * @author mengfeiyang
- *
+ * java通过加载认证证书，抓取https的url源码方法*
  */
 public class MyX509TrustManager implements X509TrustManager {
     private X509TrustManager sunJSSEX509TrustManager;
