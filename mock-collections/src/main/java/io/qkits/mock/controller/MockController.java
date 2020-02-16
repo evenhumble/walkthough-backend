@@ -22,36 +22,37 @@ import io.qkits.mock.service.GenericMockMemStore;
 @RestController("/mock")
 public class MockController {
 
-	@RestController
-	@RequestMapping("/mock")
-	public class GenericMockController {
+  @RestController
+  @RequestMapping("/mock")
+  public class GenericMockController {
 
-		@Autowired
-		private GenericMockMemStore mockMemStore;
+    @Autowired
+    private GenericMockMemStore mockMemStore;
 
-		@RequestMapping("/{productName}/setup")
-		@PostMapping
-		public QResponse setupMock(@RequestBody Object setupResponse,
-								   @PathVariable String productName,
-								   HttpServletRequest request) {
+    @RequestMapping("/{productName}/setup")
+    @PostMapping
+    public QResponse setupMock(@RequestBody Object setupResponse,
+                               @PathVariable String productName,
+                               HttpServletRequest request) {
 
-			mockMemStore.store(productName, setupResponse);
-			return QResponse.success();
-		}
+      mockMemStore.store(productName, setupResponse);
+      return QResponse.success();
+    }
 
-		/**
-		 * todo: change the path parameter mapping
-		 * @param productName
-		 * @param request
-		 * @return
-		 */
-		@RequestMapping(value = "/{productName}/getMock", method = {RequestMethod.GET,
-																	RequestMethod.POST,
-																	RequestMethod.PUT})
-		public Object getMock(@PathVariable String productName,
-							  HttpServletRequest request) {
+    /**
+     * todo: change the path parameter mapping
+     *
+     * @param productName
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/{productName}/getMock", method = {RequestMethod.GET,
+                                                                RequestMethod.POST,
+                                                                RequestMethod.PUT})
+    public Object getMock(@PathVariable String productName,
+                          HttpServletRequest request) {
 
-			return mockMemStore.get(productName);
-		}
-	}
+      return mockMemStore.get(productName);
+    }
+  }
 }
