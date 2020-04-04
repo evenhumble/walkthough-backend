@@ -23,4 +23,10 @@
 <!--        <module>slides</module>-->
         <module>gatling-demo</module>
     </modules>
+    <repositories>
+        <repository>
+            <id>ali_yun</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>
 </project>
