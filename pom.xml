@@ -24,6 +24,7 @@
         <module>corejava</module>
         <module>try.chart</module>
         <module>jmeter-plugins</module>
+        <module>testing-tools</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
