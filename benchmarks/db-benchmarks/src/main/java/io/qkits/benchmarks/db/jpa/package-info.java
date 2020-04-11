@@ -1,0 +1,1 @@
+package io.qkits.benchmarks.db.jpa;
