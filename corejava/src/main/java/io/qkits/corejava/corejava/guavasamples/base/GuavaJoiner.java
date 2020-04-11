@@ -2,6 +2,7 @@ package io.qkits.corejava.corejava.guavasamples.base;
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import io.qkits.corejava.corejava.guavasamples.SampleUtil;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,7 +10,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.List;
 import java.util.Map;
-import static io.allroundtester.walkthrough.corejava.guavasamples.SampleUtil.*;
+
+import static io.qkits.corejava.corejava.guavasamples.SampleUtil.*;
 
 public class GuavaJoiner {
 /*
@@ -32,7 +34,7 @@ public class GuavaJoiner {
                 // between consecutive elements.
                 .useForNull("VALUE_IS_MISSING")//automatically substituting nullText for any provided null elements.
                 .join(listOfName);
-        printlnTab("Joiner Replace Value If Null : " + joinReplaceIfNullValue);
+        SampleUtil.printlnTab("Joiner Replace Value If Null : " + joinReplaceIfNullValue);
         endPrintTab();
 
         /*

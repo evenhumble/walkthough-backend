@@ -4,7 +4,7 @@ import com.google.common.collect.ArrayTable;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Table;
 
-import static io.allroundtester.walkthrough.corejava.guavasamples.SampleUtil.*;
+import static io.qkits.corejava.corejava.guavasamples.SampleUtil.*;
 
 import java.util.List;
 

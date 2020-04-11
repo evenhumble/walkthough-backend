@@ -1,11 +1,12 @@
 package io.qkits.corejava.corejava.guavasamples.base;
 
 
+import io.qkits.corejava.corejava.guavasamples.pojo.Student;
+
 import java.util.Date;
 
-import static io.allroundtester.walkthrough.corejava.guavasamples.SampleUtil.*;
+import static io.qkits.corejava.corejava.guavasamples.SampleUtil.*;
 
-import io.allroundtester.walkthrough.corejava.guavasamples.pojo.Student;
 
 public class GuavaMoreObjectToStringHelper {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package io.qkits.corejava.corejava.guavasamples.base;
 import com.google.common.base.Strings;
 
-import static io.allroundtester.walkthrough.corejava.guavasamples.SampleUtil.*;
+import static io.qkits.corejava.corejava.guavasamples.SampleUtil.*;
 
 public class GuavaStrings {
     public static void main(String[] args) {

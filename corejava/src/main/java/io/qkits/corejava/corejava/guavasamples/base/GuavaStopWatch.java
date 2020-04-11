@@ -4,7 +4,7 @@ import com.google.common.base.Stopwatch;
 
 import java.util.concurrent.TimeUnit;
 
-import static io.allroundtester.walkthrough.corejava.guavasamples.SampleUtil.*;
+import static io.qkits.corejava.corejava.guavasamples.SampleUtil.*;
 
 
 public class GuavaStopWatch {

@@ -4,7 +4,7 @@ import com.google.common.collect.EvictingQueue;
 
 import java.util.Queue;
 
-import static io.allroundtester.walkthrough.corejava.guavasamples.SampleUtil.*;
+import static io.qkits.corejava.corejava.guavasamples.SampleUtil.*;
 
 /**
  * Created by patrick on 16/6/23.

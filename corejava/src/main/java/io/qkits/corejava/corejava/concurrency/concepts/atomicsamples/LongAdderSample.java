@@ -1,6 +1,5 @@
 package io.qkits.corejava.corejava.concurrency.concepts.atomicsamples;
 
-import static io.allroundtester.walkthrough.corejava.concurrency.simple.ConcurrentUtils.stop;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -8,6 +7,8 @@ import java.util.concurrent.atomic.LongAccumulator;
 import java.util.concurrent.atomic.LongAdder;
 import java.util.function.LongBinaryOperator;
 import java.util.stream.IntStream;
+
+import static io.qkits.corejava.corejava.concurrency.concepts.ConcurrentUtils.stop;
 
 
 /**

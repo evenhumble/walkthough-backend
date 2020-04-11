@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import static io.allroundtester.walkthrough.corejava.guavasamples.SampleUtil.*;
+import static io.qkits.corejava.corejava.guavasamples.SampleUtil.*;
 
 public class GuavaSplitter {
     public static void main(String[] args) {

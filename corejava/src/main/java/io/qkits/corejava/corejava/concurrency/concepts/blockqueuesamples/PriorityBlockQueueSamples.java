@@ -1,9 +1,10 @@
 package io.qkits.corejava.corejava.concurrency.concepts.blockqueuesamples;
 
+import io.qkits.corejava.corejava.concurrency.concepts.ConcurrentUtils;
+
 import java.util.Comparator;
 import java.util.concurrent.*;
 
-import io.allroundtester.walkthrough.corejava.concurrency.simple.ConcurrentUtils;
 
 
 /**

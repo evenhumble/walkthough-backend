@@ -6,25 +6,11 @@
     <packaging>pom</packaging>
     <modules>
         <module>dubbo-demo</module>
-        <module>netty-demo</module>
-        <module>dh-fileservice</module>
-        <module>qkafka-service</module>
-        <module>wiremock-demo</module>
-        <module>redis-demos</module>
-        <module>jobs-demo</module>
-        <module>datasources</module>
         <module>spring-internal</module>
-        <module>email-matters</module>
-        <!--<module>qboot</module>-->
-        <module>boot-mybatis-plus-demo</module>
-<!--        <module>q-zk</module>-->
-        <module>templates-demo</module>
-        <module>modules.xmljson</module>
-        <module>toolsets</module>
         <module>corejava</module>
-        <module>try.chart</module>
-        <module>jmeter-plugins</module>
-        <module>testing-tools</module>
+        <module>benchmarks</module>
+        <module>test-collections</module>
+        <module>components</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -99,6 +85,17 @@
         <repository>
             <id>ali_yun</id>
             <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+        <repository>
+            <id>maven-net-cn</id>
+            <name>Maven China Mirror</name>
+            <url>http://maven.net.cn/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories>
 </project>

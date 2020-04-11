@@ -1,6 +1,6 @@
 package io.qkits.corejava.corejava.guavasamples.collections;
 
-import static io.allroundtester.walkthrough.corejava.guavasamples.SampleUtil.*;
+import static io.qkits.corejava.corejava.guavasamples.SampleUtil.*;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;

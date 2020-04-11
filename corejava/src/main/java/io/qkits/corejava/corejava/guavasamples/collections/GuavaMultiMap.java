@@ -5,7 +5,7 @@ import com.google.common.collect.Multimap;
 
 import java.util.Collections;
 
-import static io.allroundtester.walkthrough.corejava.guavasamples.SampleUtil.*;
+import static io.qkits.corejava.corejava.guavasamples.SampleUtil.*;
 
 public class GuavaMultiMap {
     public static void main(String[] args) {

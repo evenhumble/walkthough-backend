@@ -1,6 +1,6 @@
 package io.qkits.corejava.corejava.nashorn;
 
-import io.allroundtester.walkthrough.corejava.lambda.Person;
+import io.qkits.corejava.corejava.lambda.Person;
 import jdk.nashorn.api.scripting.NashornScriptEngine;
 
 import javax.script.ScriptEngineManager;

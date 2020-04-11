@@ -1,14 +1,16 @@
 package io.qkits.corejava.corejava.guavasamples.base;
 
-import static io.allroundtester.walkthrough.corejava.guavasamples.SampleUtil.*;
 
 import com.google.common.base.CharMatcher;
+import io.qkits.corejava.corejava.guavasamples.SampleUtil;
+
+import static io.qkits.corejava.corejava.guavasamples.SampleUtil.*;
 
 
 public class GuavaCharMatcher {
 
   public static void main(String[] args) {
-    printTitle("Google Guava ChatMatcher");
+    SampleUtil.printTitle("Google Guava ChatMatcher");
 
     printlnSubTitle("Google Guava : Get Only DIGIT Or Letter Only");
     String data = "123123This Is Letter$%^&*()_12312";

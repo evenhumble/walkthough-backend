@@ -1,12 +1,13 @@
 package io.qkits.corejava.corejava.concurrency.concepts.atomicsamples;
 
 
+import io.qkits.corejava.corejava.concurrency.concepts.ConcurrentUtils;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
-import io.allroundtester.walkthrough.corejava.concurrency.concepts.ConcurrentUtils;
 
 /**
  * Created by patrick on 16/6/1.
