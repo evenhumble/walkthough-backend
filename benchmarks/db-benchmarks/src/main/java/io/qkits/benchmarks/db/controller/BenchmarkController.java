@@ -1,15 +1,17 @@
 package io.qkits.benchmarks.db.controller;
 
-import io.qkits.benchmarks.db.core.BenchmarkInMemResultStore;
-import io.qkits.benchmarks.db.core.BenchmarkRunner;
-import io.qkits.benchmarks.db.core.BenchmarkTest;
-import io.qkits.benchmarks.db.core.DaoBenchmarkTestBuilder;
+import io.qkits.benchmarks.db.core.*;
 import io.qkits.benchmarks.db.jpa.JpaDaoBenchmarkService;
+import io.qkits.benchmarks.db.mybatisplus.MybatisplusDaoBenchmarkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.PostConstruct;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * QMETA
@@ -24,13 +26,24 @@ public class BenchmarkController {
     @Autowired
     BenchmarkInMemResultStore resultStore;
 
+    Map<String, DaoBenchmarkService> serviceMap =new HashMap<>();
+
+
     @Autowired
     JpaDaoBenchmarkService jpaService;
+    @Autowired
+    MybatisplusDaoBenchmarkService mybatisplusService;
+
+    @PostConstruct
+    public void initBenchmarkServices(){
+        serviceMap.put("jpa",jpaService);
+        serviceMap.put("mybatisplus",mybatisplusService);
+    }
 
     @GetMapping("/benchmark/{typeName}")
     public ResponseEntity<String> runTest(@PathVariable String typeName) {
-
-        BenchmarkTest test = DaoBenchmarkTestBuilder.build(typeName,jpaService);
+        DaoBenchmarkService service = this.serviceMap.get(typeName.toLowerCase());
+        BenchmarkTest test = DaoBenchmarkTestBuilder.build(typeName,service);
         runner.runBenchmark(test);
         return ResponseEntity.ok("OK");
     }

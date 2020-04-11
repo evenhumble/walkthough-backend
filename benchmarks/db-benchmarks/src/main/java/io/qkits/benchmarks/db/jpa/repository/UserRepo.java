@@ -1,6 +1,6 @@
 package io.qkits.benchmarks.db.jpa.repository;
 
-import io.qkits.benchmarks.db.jpa.entity.User;
+import io.qkits.benchmarks.db.entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;

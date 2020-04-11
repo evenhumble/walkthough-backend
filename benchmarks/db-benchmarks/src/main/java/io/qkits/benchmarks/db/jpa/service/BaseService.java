@@ -1,6 +1,6 @@
 package io.qkits.benchmarks.db.jpa.service;
 
-import io.qkits.benchmarks.db.jpa.entity.User;
+import io.qkits.benchmarks.db.entity.User;
 
 import java.util.Map;
 

@@ -1,6 +1,18 @@
 package io.qkits.benchmarks.db.core;
 
+import io.qkits.benchmarks.db.entity.User;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
 public interface DaoBenchmarkService {
+    AtomicInteger USER_ID = new AtomicInteger();
+
+    default User next() {
+        User user = new User();
+        user.setId(USER_ID.getAndIncrement());
+        user.setCode("abc");
+        return user;
+    }
     /**
      * Insert One
      */

@@ -1,4 +1,4 @@
-package io.qkits.benchmarks.db.jpa.entity;
+package io.qkits.benchmarks.db.entity;
 
 import java.util.List;
 

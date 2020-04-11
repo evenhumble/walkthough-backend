@@ -41,5 +41,11 @@
             <scope>provided</scope>
             <version>1.18.10</version>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+
     </dependencies>
 </project>

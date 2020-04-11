@@ -1,4 +1,5 @@
-package io.qkits.benchmarks.db.jpa.entity;
+package io.qkits.benchmarks.db.entity;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -12,6 +13,7 @@ import javax.persistence.Table;
 @Entity()
 @Table(name="users")
 @Data
+@TableName("users")
 public class User implements Serializable{
 	@Id
 	@GeneratedValue
