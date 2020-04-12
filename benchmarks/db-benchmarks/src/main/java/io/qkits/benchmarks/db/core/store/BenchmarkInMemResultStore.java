@@ -1,5 +1,6 @@
-package io.qkits.benchmarks.db.core;
+package io.qkits.benchmarks.db.core.store;
 
+import io.qkits.benchmarks.db.core.BenchmarkTaskResult;
 import org.aspectj.util.FileUtil;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -16,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * created by: patrick
  **/
 @Component
-public class BenchmarkInMemResultStore {
+public class BenchmarkInMemResultStore implements BenchmarkResultStore {
 
     @Value("${benchmark.resultDir}")
     private String resultDir;
@@ -31,6 +32,7 @@ public class BenchmarkInMemResultStore {
         benchmarkResult.put(categoryName,current);
     }
 
+    @Override
     public void writeOverallBenchmarkResult() {
         for (Map.Entry<String, List<BenchmarkTaskResult>> entry : benchmarkResult.entrySet()) {
             String fileName = entry.getKey() + ".csv";
@@ -44,7 +46,8 @@ public class BenchmarkInMemResultStore {
         }
     }
 
-    public List<BenchmarkTaskResult> getAndWriteResultByCategoryName(String categoryName) {
+    @Override
+    public List<BenchmarkTaskResult> writeCategoryResult(String categoryName) {
         List<BenchmarkTaskResult> results = benchmarkResult.getOrDefault(categoryName, new LinkedList<>());
         String fileName = categoryName + ".csv";
         File file = new File(resultDir, fileName);
@@ -55,5 +58,15 @@ public class BenchmarkInMemResultStore {
         }
         FileUtil.writeAsString(file, testResultContent.toString());
         return results;
+    }
+
+    @Override
+    public List<BenchmarkTaskResult> getResultByCategoryName(String categoryName) {
+        return benchmarkResult.getOrDefault(categoryName,new LinkedList<>());
+    }
+
+    @Override
+    public Map<String, List<BenchmarkTaskResult>> getTestResults() {
+        return this.benchmarkResult;
     }
 }

@@ -5,7 +5,7 @@ import io.qkits.benchmarks.db.entity.User;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public interface DaoBenchmarkService {
-    AtomicInteger USER_ID = new AtomicInteger();
+    public static AtomicInteger USER_ID = new AtomicInteger(10);
 
     default User next() {
         User user = new User();
