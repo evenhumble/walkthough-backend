@@ -8,3 +8,7 @@ spring:
 
 benchmark:
   resultDir: benchmark_result
+
+logging:
+  level:
+    root: debug

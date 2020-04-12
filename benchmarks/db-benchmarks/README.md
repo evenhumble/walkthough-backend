@@ -45,3 +45,10 @@
 
 - [spring boot jpa data](https://docs.spring.io/spring-data/jpa/docs/2.2.6.RELEASE/reference/html/#repositories)
 - [mybatis plus](https://mp.baomidou.com/guide/quick-start.html#%E9%85%8D%E7%BD%AE)
+
+
+## Tuning
+
+```sh 
+$ curl -O https://alibaba.github.io/arthas/arthas-boot.jar
+```
