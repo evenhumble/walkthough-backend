@@ -2,17 +2,15 @@
 
 Build status on Travis CI:
 
-[![Build Status](https://travis-ci.org/qdriven/walkthough-backend.png?branch=master)](https://travis-ci.org/evenhumble/dh-spring)
-
-[![CircleCI](https://circleci.com/gh/qdriven/walkthough-backend.svg?style=svg)](https://circleci.com/gh/evenhumble/dh-spring)
-[![Build Status](https://travis-ci.org/qdriven/walkthough-backend.svg?branch=master)](https://travis-ci.org/evenhumble/dh-spring)
+[![Build Status](https://travis-ci.org/qdriven/walkthough-backend.svg?branch=master)](https://travis-ci.org/qdriven/walkthough-backend.svg?branch=master)
 
 ## Setup Github Actions
+- Use Github Action to setup Maven
+- Follow the Github Action instruction
 
-## SpringBoot For Tester 
+## Benchmarks for DAO framework examples
 
-- HelloWorld API and How to Test it? UT and Integration 
-
+- [benchmarks](benchmarks)
 
 ## Mybatis-plus demo reference codes:
 
