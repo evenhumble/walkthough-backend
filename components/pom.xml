@@ -18,5 +18,6 @@
         <module>templates-demo</module>
         <module>qkafka-service</module>
         <module>netty-demo</module>
+        <module>redis-demos</module>
     </modules>
 </project>
