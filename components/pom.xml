@@ -19,5 +19,7 @@
         <module>qkafka-service</module>
         <module>netty-demo</module>
         <module>redis-demos</module>
+        <module>boot-mybatis-plus-demo</module>
+        <module>jpa-demos</module>
     </modules>
 </project>

@@ -11,7 +11,6 @@
     <packaging>pom</packaging>
     <artifactId>benchmarks</artifactId>
     <modules>
-        <module>boot-mybatis-plus-demo</module>
         <module>db-benchmarks</module>
     </modules>
 
