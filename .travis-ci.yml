@@ -10,7 +10,7 @@ before_install:
   - chmod +x mvnw
 
 script:
-  - mvn cobertura:cobertura
+  - mvn clean compile
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
