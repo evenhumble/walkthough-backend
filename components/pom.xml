@@ -13,7 +13,6 @@
     <modules>
         <module>dh-fileservice</module>
         <module>jobs-demo</module>
-        <module>datasources</module>
         <module>try.chart</module>
         <module>templates-demo</module>
         <module>qkafka-service</module>
