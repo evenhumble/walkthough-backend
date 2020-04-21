@@ -15,3 +15,7 @@ Build status on Travis CI:
 ## Mybatis-plus demo reference codes:
 
 - https://github.com/baomidou/mybatis-plus-samples.git
+
+## Referece
+
+- [springboot-demo](https://github.com/xkcoding/spring-boot-demo.git)
