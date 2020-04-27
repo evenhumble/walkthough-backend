@@ -19,3 +19,5 @@ Build status on Travis CI:
 ## Referece
 
 - [springboot-demo](https://github.com/xkcoding/spring-boot-demo.git)
+- [core-java](https://github.com/clamaa/java-learn.git)
+- [core-java-2](https://github.com/brianway/java-learning.git)

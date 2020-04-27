@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Netty WebSocket Time Server</title>
+</head>
+<body>
+<br>
+<script type="text/javascript">
+    var socket;
+    if (!window.WebSocket) {
+        window.WebSocket = window.MozWebSocket;
+    }
+    if (window.WebSocket) {
+        socket = new WebSocket("ws://localhost:8888/websocket");
+        socket.onmessage = function (event) {
+            var ta = document.getElementById('responseText');
+            ta.value = "";
+            ta.value = event.data;
+        };
+        socket.onopen = function (event) {
+            var ta = document.getElementById('responseText');
+            ta.value = "Open web socket service available!"
+        }
+        socket.onclose = function (event) {
+            var ta = document.getElementById('responseText');
+            ta.value = "";
+            ta.value = "WebSocket Closed!";
+        };
+
+    } else {
+        alert("Sorry, Your browser not support WebSocket Protocol!");
+    }
+
+    function send(message) {
+        if (!window.WebSocket) {
+            return;
+        }
+        if (socket.readyState == WebSocket.OPEN) {
+            socket.send(message);
+        } else {
+            alert("WebSocket connection not establish!");
+        }
+    }
+</script>
+<form onsubmit="return false;">
+    <input type="text" name="message" value="Netty Best Pratice"/>
+    <br>
+    <input type="button" value="Send WebSocket Message" onclick="send(this.form.message.value)"/>
+    <hr color="blue"/>
+    <h3>Server Return Reply Message</h3>
+    <textarea id="responseText" style="width: 500px;height: 300px;"></textarea>
+</form>
+
+</body>
+</html>

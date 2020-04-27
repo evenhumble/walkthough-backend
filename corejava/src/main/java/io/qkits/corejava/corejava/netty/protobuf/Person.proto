@@ -1,0 +1,13 @@
+package com.yonyou.clamaa.netty.protobuf;
+option java_package="com.yonyou.clamaa.netty.protobuf";
+option java_outer_classname="PersonProtos";
+message Person{
+    required string name=1;
+    required int32 id=2;
+    optional string email=3;
+    message PhoneNumber{
+        required string number=1;
+        optional int32 type=2;
+    }
+    required PhoneNumber phone=4;
+}
