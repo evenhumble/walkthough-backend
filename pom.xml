@@ -10,7 +10,7 @@
         <module>benchmarks</module>
         <module>test-collections</module>
         <module>components</module>
-        <module>monolith</module>
+
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
