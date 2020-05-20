@@ -10,6 +10,8 @@
         <module>benchmarks</module>
         <module>test-collections</module>
         <module>components</module>
+        <module>dataway-demo</module>
+        <module>starters</module>
 
     </modules>
     <parent>
