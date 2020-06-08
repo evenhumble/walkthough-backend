@@ -12,6 +12,7 @@
         <module>components</module>
         <module>dataway-demo</module>
         <module>starters</module>
+        <module>qtoolkits</module>
 
     </modules>
     <parent>
