@@ -16,5 +16,6 @@
         <module>wiremock-demo</module>
         <module>jmeter-plugins</module>
         <module>modules.xmljson</module>
+        <module>pmd-template</module>
     </modules>
 </project>
