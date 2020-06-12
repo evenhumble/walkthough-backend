@@ -26,11 +26,11 @@ public class PostmanGenerator {
 
     public static void main(String[] args) throws IOException {
         PostmanConverter converter = new PostmanConverter();
-        List<String> jsonList = FileUtil.readLines("postman-v2.json",Charset.defaultCharset());
-        String jsonStr = StringUtils.join(jsonList,' ');
+        List<String> jsonList = FileUtil.readLines("postman-v2.json", Charset.defaultCharset());
+        String jsonStr = StringUtils.join(jsonList, ' ');
         System.out.println(jsonStr);
 //        PostmanUtils.readPostmanJson();
-       List<PostmanItem> postmanItems =  PostmanUtils.readPostmanJson(jsonStr);
+        List<PostmanItem> postmanItems = PostmanUtils.readPostmanJson(jsonStr);
         for (PostmanItem postmanItem : postmanItems) {
             System.out.println(postmanItem);
         }
@@ -38,6 +38,6 @@ public class PostmanGenerator {
         String karateFeatures = PostmanUtils.toKarateFeature(postmanItems);
         System.out.println(karateFeatures);
         String postManFile = "/Users/patrick/workspace/works/focus/advanced/walkthrough/testing-tools/src/main/resources/postman-v2.json";
-        converter.convert(postManFile,"bitex");
+        converter.convert(postManFile, "bitex");
     }
 }
