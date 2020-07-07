@@ -1,0 +1,9 @@
+{
+  "SAUCE_USERNAME":"your Sauce Labs username",
+  "SAUCE_ACCESS_KEY":"your Sauce Labs access key",
+  "TO_WEB_ACCESS_KEY":"your TestObject Web API Key",
+  "TO_ANDROID_ACCESS_KEY":"your TestObject Android API Key",
+  "TO_IOS_ACCESS_KEY":"your TestObject iOS API Key",
+  "DESKTOP_HOMEPAGE_URL":"your desktop homepage url",
+  "MOBILE_WEB_HOMEPAGE_URL":"your mobile web homepage url"
+}
