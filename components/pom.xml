@@ -22,6 +22,5 @@
         <module>jpa-demos</module>
         <module>spring-in-short</module>
         <module>camel-restjpa</module>
-        <module>dataway-demo</module>
     </modules>
 </project>
