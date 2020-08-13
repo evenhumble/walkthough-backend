@@ -6,12 +6,12 @@
     <packaging>pom</packaging>
     <modules>
 <!--        <module>spring-internal</module>-->
-        <module>corejava</module>
+<!--        <module>corejava</module>-->
         <module>benchmarks</module>
         <module>test-collections</module>
         <module>components</module>
         <module>starters</module>
-        <module>saucelab-demos</module>
+<!--        <module>saucelab-demos</module>-->
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
