@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-cn.afterturn.easypoi.configuration.EasyPoiAutoConfiguration
+io.qkits.poi.EasyPoiAutoConfiguration
